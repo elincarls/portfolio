@@ -1,7 +1,13 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+//import Image from 'next/image'
+//import styles from './page.module.css'
+
+import './globals.css'
 
 export default function Home() {
+  return <h1>Home page</h1>;
+}
+
+/*export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -92,4 +98,4 @@ export default function Home() {
       </div>
     </main>
   )
-}
+}*/
