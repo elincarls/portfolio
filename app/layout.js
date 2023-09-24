@@ -1,14 +1,17 @@
+import SideBar from '../components/Navigation/SideBar/SideBar';
 import './globals.css'
-//import { Inter } from 'next/font/google'
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <title>Alptopps</title>
       </head>
       <body>
-        {children}
+       <SideBar />
+        <div className='content'>
+          {children}
+        </div>
       </body>
     </html>)
 }
