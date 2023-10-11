@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: aliceblue;
+    background-color: var(--color-background-paper);
     position: fixed;
     height: 100%;
     overflow: auto;
+    border-right: solid 1px grey;
 }
 
 .sidebar a {

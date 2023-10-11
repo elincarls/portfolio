@@ -19,5 +19,13 @@ a {
   margin-left: 200px;
   padding: 1px 16px;
   height: 1000px;
-  background-color: salmon;
+  background-color: var(--color-background-paper);
+}
+
+:root {
+  --color-text-default: rgba(0, 0, 0, 0.87);
+  --color-text-muted: rgba(0, 0, 0, 0.72);
+  --color-text-emphasis: #000000;
+  --color-background-paper: #ffffff;
+  --color-background-backdrop: rgba(0, 0, 0, 0.48);
 }
