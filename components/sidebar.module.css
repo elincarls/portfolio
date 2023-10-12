@@ -1,0 +1,39 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 16px 0 0 0;
+    width: 240px;
+    background-color: var(--color-background-paper);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-right: solid 1px grey;
+}
+
+.logo {
+    width: 176px;
+    height: 72px;
+}
+
+/*.sidebar div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.sidebar a {
+    height: 32px;
+    display: block;
+    color: black;
+    padding: 32px;
+    text-decoration: none;
+    align-self: stretch;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: cadetblue;
+    color: white;
+}*/
