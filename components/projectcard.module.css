@@ -3,4 +3,13 @@
     height: 320px;
     border: solid 1px grey;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.tag-section {
+    display: flex;
+    flex-wrap: wrap;
 }
