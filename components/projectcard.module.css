@@ -1,0 +1,6 @@
+.project-card {
+    width: 400px;
+    height: 320px;
+    border: solid 1px grey;
+    border-radius: 8px;
+}
