@@ -1,3 +1,7 @@
-export default function About() {
-    return <h1>about</h1>;
+import ContentHeader from "../../components/ContentHeader"
+
+  export default function About() {
+    return (
+      <ContentHeader text="About (ContentHeader)"/>
+    ) 
   }

@@ -1,3 +1,7 @@
-export default function Projects() {
-    return <h1>projects</h1>;
+  import ContentHeader from "../../components/ContentHeader";
+
+  export default function Projects() {
+    return (
+      <ContentHeader text="Project view (ContentHeader)"/>
+    ) 
   }
