@@ -4,7 +4,9 @@ import styles from '../page.module.css'
 
 import dummyProjects from '../../projects'
 
+
 export default function Projects() {
+
   const projects = dummyProjects;
 
   return (
@@ -12,8 +14,9 @@ export default function Projects() {
       <ContentHeader text="Projects (ContentHeader)" />
       <div className={`${styles["project-grid"]}`}>
         {projects.map((project) =>
-          <ProjectCard project={project} />
-          // can probably refactor the above 
+          <ProjectCard 
+          project={project}
+          id={project.id} />
         )}
       </div>
     </div>
