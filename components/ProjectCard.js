@@ -1,20 +1,23 @@
+import Link from 'next/link';
 import CategoryTag from './CategoryTag'
 
 import styles from './projectcard.module.css'
 
-export default function ProjectCard({ title, description, tags, id }) {
+export default function ProjectCard({ project, id }) {
     return (
+        <Link href={`/projects/${id}`}>
         <div className={`${styles["project-card"]}`}>
             <div>
-                <h2>{title}</h2>
-                <p>{description}</p>
-                <p>id: {id}</p>
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+                <p>id: {project.id}</p>
             </div>
             <div className={`${styles["tag-section"]}`}>
-                {tags.map((tag) =>
+                {project.tags.map((tag) =>
                     <CategoryTag label={tag} />
                 )}
             </div>
         </div>
+        </Link>
     );
 }
