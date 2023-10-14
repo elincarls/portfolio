@@ -1,17 +1,16 @@
 import SideBar from '../components/SideBar';
 import './globals.css'
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en">
-      <head>
-        <title>Alptopps</title>
-      </head>
       <body>
-       <SideBar />
-        <div className='content'>
+        <SideBar />
+        <main className='content'>
           {children}
-        </div>
+        </main>
+        {modal}
       </body>
-    </html>)
+    </html>
+  );
 }

@@ -1,10 +1,7 @@
-'use client'
 import ContentHeader from "../../../components/ContentHeader"
 import dummyProjects from "../../../projects"
-import { useParams } from "next/navigation"
 
-export default function ProjectDetail() {
-  const id = useParams().projectId;
+export default function ProjectDetail({ params: {id}}) {
   const project = dummyProjects.find((p) => p.id === id);
 
   return (
