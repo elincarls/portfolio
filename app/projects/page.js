@@ -15,6 +15,7 @@ export default function Projects() {
       <div className={`${styles["project-grid"]}`}>
         {projects.map((project) =>
           <ProjectCard 
+          key={project.id}
           project={project}
           id={project.id} />
         )}

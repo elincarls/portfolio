@@ -13,8 +13,8 @@ export default function ProjectCard({ project, id }) {
                 <p>id: {project.id}</p>
             </div>
             <div className={`${styles["tag-section"]}`}>
-                {project.tags.map((tag) =>
-                    <CategoryTag label={tag} />
+                {project.tags.map((tag, index) =>
+                    <CategoryTag key={index} label={tag} />
                 )}
             </div>
         </div>
