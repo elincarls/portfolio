@@ -11,7 +11,7 @@ export default function Projects() {
 
   return (
     <div>
-      <ContentHeader text="Projects (ContentHeader)" />
+      <ContentHeader text="Projects" />
       <div className={`${styles["project-grid"]}`}>
         {projects.map((project) =>
           <ProjectCard 

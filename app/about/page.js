@@ -1,7 +1,7 @@
 import ContentHeader from "../../components/ContentHeader"
 
-  export default function About() {
+  export default function AboutMe() {
     return (
-      <ContentHeader text="About (ContentHeader)"/>
+      <ContentHeader text="About me"/>
     ) 
   }
