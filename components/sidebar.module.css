@@ -5,10 +5,11 @@
     margin: 0;
     min-width: 240px;
     background-color: var(--color-background-paper);
-    height: 100%;
-    overflow: auto;
+    height: 100vh;
     border-right: solid 1px grey;
-    }
+    top: 0;
+    position: sticky;
+}
 
 .logo {
     width: 176px;
@@ -17,23 +18,12 @@
     margin-bottom: 40px;
 }
 
-/*.sidebar div {
+.social-link-group {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    row-gap: 2px;
+    height: 24px;
+    flex-grow: 1;
     align-self: stretch;
-}
-
-.sidebar a {
-    height: 32px;
-    display: block;
-    color: black;
+    align-items: flex-end;
     padding: 32px;
-    text-decoration: none;
-    align-self: stretch;
 }
-
-.sidebar a:hover:not(.active) {
-    background-color: cadetblue;
-    color: white;
-}*/
