@@ -10,7 +10,6 @@ export default function ProjectCard({ project, id }) {
             <div>
                 <h2 className={`${styles["card-header"]}`}>{project.title}</h2>
                 <p>{project.description}</p>
-                <p>id: {project.id}</p>
             </div>
             <div className={`${styles["tag-section"]}`}>
                 {project.tags.map((tag, index) =>

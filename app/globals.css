@@ -10,6 +10,8 @@ body {
   width: 100%;
   overflow-x: hidden;
   display: flex;
+  font-family: Helvetica Neue, var(--font-open-sans), sans-serif;
+  --color-text-default: rgba(0, 0, 0, 0.87);
 }
 
 a {
