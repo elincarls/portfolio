@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./modal.module.css"
 
 export default function Modal({ children }) {
-  const overlay = useRef();
+  const backdrop = useRef();
   const wrapper = useRef();
   const router = useRouter();
 
@@ -14,11 +14,11 @@ export default function Modal({ children }) {
 
   const onClick = useCallback(
     (e) => {
-      if (e.target === overlay.current || e.target === wrapper.current) {
+      if (e.target === backdrop.current || e.target === wrapper.current) {
         if (onDismiss) onDismiss();
       }
     },
-    [onDismiss, overlay, wrapper]
+    [onDismiss, backdrop, wrapper]
   );
 
   const onKeyDown = useCallback(
@@ -30,13 +30,17 @@ export default function Modal({ children }) {
 
   useEffect(() => {
     document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    document.body.classList.add("no-scroll");
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.classList.remove("no-scroll");
+    };
   }, [onKeyDown]);
 
   return (
     <div
-      ref={overlay}
-      className={`${styles["modal-overlay"]}`}
+      ref={backdrop}
+      className={`${styles["modal-backdrop"]}`}
       onClick={onClick}
     >
       <div
