@@ -10,13 +10,10 @@ body {
   display: flex;
   font-family: Helvetica Neue, var(--font-open-sans), sans-serif;
   --color-text-default: rgba(0, 0, 0, 0.87);
-<<<<<<< Updated upstream
-=======
 }
 
 body.no-scroll {
   overflow: hidden;
->>>>>>> Stashed changes
 }
 
 a {
