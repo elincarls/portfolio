@@ -52,6 +52,12 @@ img {
   max-width: 100%;
 }
 
+.hero {
+  font-family: var(--font-sora);
+  line-height: 100%;
+  font-size: 120px;
+}
+
 :root {
   --color-text-default: rgba(0, 0, 0, 0.87);
   --color-text-muted: rgba(0, 0, 0, 0.72);

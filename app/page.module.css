@@ -3,3 +3,18 @@
     flex-wrap: wrap;
     gap: 24px;
 }
+
+.home {
+    margin: 72px; 
+    width: 60%;
+}
+
+.home h1 {
+    margin-bottom: 48px;
+}
+
+.home p {
+    font-size: 24px; 
+    margin-top: 32px;
+}
+
