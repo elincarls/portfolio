@@ -1,20 +1,16 @@
 .project-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 1.5em;
 }
 
 .home {
-    margin: 72px; 
+    margin: 4.5em; 
     width: 60%;
 }
 
-.home h1 {
-    margin-bottom: 48px;
-}
-
 .home p {
-    font-size: 24px; 
-    margin-top: 32px;
+    font-size: 1.5em; 
+    margin-top: 2em;
 }
 

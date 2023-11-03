@@ -9,7 +9,7 @@ body {
   height: 100vh;
   display: flex;
   font-family: Helvetica Neue, var(--font-open-sans), sans-serif;
-  --color-text-default: rgba(0, 0, 0, 0.87);
+  color: var(--color-text-default); 
 }
 
 body.no-scroll {
@@ -22,30 +22,37 @@ a {
 }
 
 ul {
+  padding-left: 1.5em;
   list-style-position: inside;
-}
+  width: 95%;
+  }
+
+li {
+  margin-top: 1em;
+  list-style-position: outside;
+  }
 
 .paragraphs {
   display: flex;
   flex-direction: column;
-  gap: 16px; 
+  gap: 1em; 
 }
 
 .page-header {
   color: var(--text-emphasis, #000);
   font-family: var(--font-sora);
-  font-size: 48px;
+  font-size: 3em;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
-  letter-spacing: 0.48px;
+  letter-spacing: 0.03em;
 }
 
 .content {
-  padding: 32px;
+  padding: 2em;
   background-color: var(--color-background-paper);
   flex-grow: 1;
-  margin-left: 240px;
+  margin-left: 15em;
 }
 
 img {
@@ -55,13 +62,14 @@ img {
 .hero {
   font-family: var(--font-sora);
   line-height: 100%;
-  font-size: 120px;
+  font-size: 8em;
 }
 
 :root {
   --color-text-default: rgba(0, 0, 0, 0.87);
   --color-text-muted: rgba(0, 0, 0, 0.72);
-  --color-text-emphasis: #000000;
+  --color-text-emphasis: rgba(0, 0, 0, 1);
+  --color-text-contrast: #ffffff;
   --color-background-paper: #ffffff;
   --color-background-backdrop: rgba(0, 0, 0, 0.56);
 }
