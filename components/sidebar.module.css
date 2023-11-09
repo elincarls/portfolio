@@ -26,3 +26,41 @@
     align-items: flex-end;
     padding: 2em;
 }
+
+.menu-item {
+    font-family: var(--font-sora);
+    font-weight: 600;
+    font-size: 1.125em;
+    height: 2em;
+    display: flex;
+    color: var(--color-text-emphasis);
+    text-decoration: none;
+    align-self: stretch;
+    padding-left: 2em;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #EEEEEE;
+  }
+  
+  .menu-item:active {
+    background-color: #E0E0E0; /* Slightly darker background on mouse down */
+  }
+  
+  .menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px; /* Width of the indicator bar */
+    background-color: var(--color-text-emphasis); /* Color of the indicator bar */
+    display: none; /* Initially hidden */
+  }
+  
+  .menu-item.selected::before {
+    display: block; /* Display the indicator bar for selected and active states */
+  }
