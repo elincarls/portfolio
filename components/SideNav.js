@@ -1,14 +1,14 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from './sidebar.module.css';
+import styles from './sideNav.module.css';
 
 export default function SideBar() {
     const pathname = usePathname();
     return (
         <div className={`${styles["sidebar"]}`}>
             <Link href="/">
-                <img src="/title-logo.svg" alt="" className={styles.logo} />
+                <img src="/title-logo-desktop.svg" alt="" className={styles.logo} />
             </Link>
 
             <Link className={`${styles["menu-item"]} ${pathname == "/projects" ? styles["selected"] : ""}`} href="/projects"> Projects </Link>

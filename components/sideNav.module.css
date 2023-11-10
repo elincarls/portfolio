@@ -1,0 +1,71 @@
+.sidebar {
+    align-items: center;
+    background-color: var(--color-background-paper);
+    border-right: solid 0.0625em grey;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    min-width: 15em;
+}
+
+.logo {
+    height: 72px;
+    margin-bottom: 2.5em;
+    margin-top: 2em;
+    width: 176px;
+}
+
+.social-link-group {
+    align-items: flex-end;
+    align-self: stretch;
+    display: flex;
+    flex-grow: 1;
+    height: 1.5em;
+    padding: 2em;
+    row-gap: 0.125em;
+}
+
+.menu-item {
+    align-items: center;
+    align-self: stretch;
+    color: var(--color-text-emphasis);
+    display: flex;
+    font-family: var(--font-sora);
+    font-size: 1.125em;
+    font-weight: 600;
+    height: 2em;
+    padding-left: 2em;
+    position: relative;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: #EEEEEE;
+  }
+  
+  .menu-item:active {
+    background-color: #E0E0E0;
+  }
+  
+  .menu-item::before {
+    background-color: var(--color-text-emphasis);
+    content: '';
+    display: none; /* Selected state indicator bar is initially hidden */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+  }
+  
+  .menu-item.selected::before {
+    display: block; /* Display the indicator bar for selected state */
+  }
+
+  @media screen and (max-width: 800px) {
+    .sidebar {
+      display: none;
+    }
+  }
