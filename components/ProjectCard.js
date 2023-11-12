@@ -3,16 +3,17 @@ import CategoryTag from './CategoryTag'
 
 import styles from './projectcard.module.css'
 
-export default function ProjectCard({ project, id }) {
+export default function ProjectCard({title, description, tags, id}) {    
+    
     return (
         <Link href={`/projects/${id}`}>
         <div className={`${styles["project-card"]}`}>
             <div>
-                <h2 className={`${styles["card-header"]}`}>{project.title}</h2>
-                <p>{project.description}</p>
+                <h2 className={`${styles["card-header"]}`}>{title}</h2>
+                <p>{description}</p>
             </div>
             <div className={`${styles["tag-section"]}`}>
-                {project.tags.map((tag, index) =>
+                {tags.map((tag, index) =>
                     <CategoryTag key={index} label={tag} />
                 )}
             </div>
