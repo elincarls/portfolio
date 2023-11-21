@@ -1,7 +1,41 @@
 .project-card {
+  aspect-ratio: 4/3;
+  border-radius: 0.5em;
+  border: solid 0.0625em var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.tag-section {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 0.25em;
+}
+
+.card-header {
+  color: var(--text-emphasis);
+  font-family: var(--font-sora);
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 120%;
+  margin-bottom: 0.1em;
+}
+
+@media screen and (min-width: 572px) {
+  .project-card {
+    aspect-ratio: 5/4;
+  }
+}
+
+/*.project-card {
+    aspect-ratio: 24/18; 
     width: 100%;
-    height: 16em;
-    border: solid 0.0625em grey;
+    max-width: 24em;
+    border: solid 0.0625em var(--color-border-default);
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
@@ -10,19 +44,23 @@
 
 }
 
-.tag-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25em;
+.description {
+  display: inline-block;
 }
 
-.card-header {
-    color: var(--text-emphasis, #000);
-    font-family: var(--font-sora);
+@media screen and (min-width: 360px) {
+  .description {
+    display: inline-block;
+  }
+
+  .card-header {
     font-size: 1.5em;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.015em;
     margin-bottom: 0.5em;
+  }
 }
+
+@media screen and (min-width: 624px) {
+  .project-card {
+    aspect-ratio: 5/4;
+  }
+}*/

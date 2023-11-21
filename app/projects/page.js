@@ -18,7 +18,7 @@ export default async function Projects() {
   const { projects } = await getProjects();
 
   return (
-    <div>
+    <>
       <ContentHeader text="Projects" />
       <div className={`${styles["project-grid"]}`}>
         {projects.map(project =>
@@ -31,6 +31,6 @@ export default async function Projects() {
           />
         )}
       </div>
-    </div>
+    </>
   )
 }

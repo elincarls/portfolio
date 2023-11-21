@@ -1,12 +1,11 @@
 .navbar {
   align-items: center;
   background-color: var(--color-background-paper);
-  border-bottom: solid 0.0625em grey;
+  border-bottom: solid 0.0625em var(--color-border-default);
   display: flex;
   height: 4.25em;
   justify-content: space-between;
   padding: 0.5em 0.5em 0.5em 1em;
-  width: 100%;
 }
 
 .menu {
@@ -53,7 +52,7 @@
   width: 72px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1120px) {
   .navbar {
     display: none;
   }

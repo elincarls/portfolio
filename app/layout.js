@@ -6,6 +6,7 @@ import './globals.css'
 
 export default function RootLayout({ children, modal }) {
   return (
+    
     <html lang="en" className={`${open_sans.variable} ${sora.variable}`}>
       <body>
         <SideNav />
