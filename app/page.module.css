@@ -5,6 +5,18 @@
   max-width: 25em;
 }
 
+.home {
+display: flex;
+flex-direction: column;
+row-gap: 1em;
+max-width: 32em;
+margin: 1.5em;
+}
+
+.home p {
+font-size: 1.25em;
+}
+
 @media screen and (min-width: 572px) {
   .project-grid {
     grid-template-columns: 1fr 1fr;
@@ -24,6 +36,16 @@
       gap: 1.5em;
       max-width: 51em; 
     }
+
+    .home {
+        row-gap: 1em;
+        max-width: 46em;
+        margin: 6em;
+        }
+        
+        .home p {
+        font-size: 1.5em;
+        }
   }
 
   @media screen and (min-width: 1320px) {
@@ -34,7 +56,7 @@
   }
 
 
-.home {
+/*.home {
     margin: 4.5em; 
     width: 60%;
 }
@@ -42,4 +64,4 @@
 .home p {
     font-size: 1.5em; 
     margin-top: 2em;
-}
+}*/

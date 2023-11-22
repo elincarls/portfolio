@@ -30,37 +30,3 @@
     aspect-ratio: 5/4;
   }
 }
-
-/*.project-card {
-    aspect-ratio: 24/18; 
-    width: 100%;
-    max-width: 24em;
-    border: solid 0.0625em var(--color-border-default);
-    border-radius: 0.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5em;
-
-}
-
-.description {
-  display: inline-block;
-}
-
-@media screen and (min-width: 360px) {
-  .description {
-    display: inline-block;
-  }
-
-  .card-header {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-  }
-}
-
-@media screen and (min-width: 624px) {
-  .project-card {
-    aspect-ratio: 5/4;
-  }
-}*/
