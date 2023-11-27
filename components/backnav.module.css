@@ -1,0 +1,46 @@
+.back-nav {
+  height: 4.25em;
+  padding: 0.5em 0.5em 0.5em 1em;
+  display: block;
+  display: flex;
+  height: 4.25em;
+  justify-content: space-between;
+  padding-left: 1em;
+}
+
+.text-btn {
+  justify-content: center;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02875rem;
+  border: none; 
+  background-color: transparent;
+  color: var(--color-text-emphasis);
+}
+
+.back-btn {
+  display: inline-flex;
+}
+
+.close-btn {
+  display: none;
+}
+
+@media screen and (min-width: 572px) {
+  .back-btn {
+      display: none;
+  }
+  .close-btn {
+    display: inline-flex;
+}
+}
+
+@media screen and (min-width: 1120px) {
+  .back-nav {
+    display: none;
+  }
+}

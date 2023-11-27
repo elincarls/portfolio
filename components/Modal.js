@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./modal.module.css"
+import styles from "./modal.module.css";
 
 export default function Modal({ children }) {
   const backdrop = useRef();
@@ -43,16 +43,8 @@ export default function Modal({ children }) {
       className={`${styles["modal-backdrop"]}`}
       onClick={onClick}
     >
-      <div
-        ref={wrapper}
-        className={`${styles["modal-wrapper"]}`}
-      >
-        <div className={`${styles["modal"]}`}
-        >
-
-          {children}
-
-        </div>
+      <div ref={wrapper} className={`${styles["modal"]}`}>
+        {children}
       </div>
     </div>
   );
