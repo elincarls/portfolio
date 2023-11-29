@@ -1,16 +1,18 @@
 import ContentHeader from "../../components/ContentHeader";
 import styles from "./../page.module.css";
 import "../globals.css";
+import aboutmeJSON from '../../db/about-me.json'
 
 export default function AboutMe() {
+  const content = aboutmeJSON.aboutMe; 
   return (
     <div className={`${styles["about-me"]}`}>
       <ContentHeader text="About me" />
       <div className={`${["paragraphs"]}`}>
-        <p>
-        Lorem ipsum dolor sit amet consectetur. Eu urna tellus volutpat justo vel neque molestie euismod.
-        </p>
-      </div>
+                {content.map((paragraph, pIndex) => (
+                  <p key={pIndex}> {paragraph} </p>
+                ))}
+              </div>
       <a
         className={`${styles["filled-btn"]}`}
         href="/elin_carlsson_CV_en_20231127.pdf"
