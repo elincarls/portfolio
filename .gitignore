@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# content
+/db
+public/elin_carlsson_CV_en_20231127.pdf
