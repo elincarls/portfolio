@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect} from "react";
 import { usePathname, useRouter } from "next/navigation";
-import styles from "./topNav.module.css";
+import styles from "./topnav.module.css";
 
 export default function TopNav() {
   const [drawerOpen, setDrawerOpen] = useState(false);
