@@ -1,21 +1,10 @@
 import ContentHeader from "../../components/ContentHeader"
 import ProjectCard from "../../components/ProjectCard"
 import styles from '../page.module.css'
-
-const getProjects = async () => {
-  try {
-    const res = await fetch('http://localhost:3000/api/projects', { cache: 'no-store', });
-    if (!res.ok) {
-      throw new Error("Failed to fetch projects");
-    }
-    return res.json();
-  } catch (error) {
-    console.log("Error loading projects", error)
-  }
-}
+import projectsJSON from '../../db/projects.json'
 
 export default async function Projects() {
-  const { projects } = await getProjects();
+  const projects = projectsJSON.projects; 
 
   return (
     <>
@@ -23,8 +12,8 @@ export default async function Projects() {
       <div className={`${styles["project-grid"]}`}>
         {projects.map(project =>
           <ProjectCard
-            key={project._id}
-            id={project._id}
+            key={project.id} 
+            id={project.id}
             title={project.title}
             description={project.description}
             tags={project.tags}
