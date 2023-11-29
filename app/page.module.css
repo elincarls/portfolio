@@ -17,6 +17,29 @@
   font-size: 1.25em;
 }
 
+.about-me {
+  max-width: 46em;
+}
+
+.filled-btn {
+  margin-top: 3em;
+  display: inline-flex;
+  height: 2.5em;
+  justify-content: center;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.02875rem;
+  padding: 0 1em;
+  border: none;
+  border-radius: 0.5em; 
+  background-color: black;
+  color: var(--color-text-contrast);
+}
+
 @media screen and (min-width: 572px) {
   .project-grid {
     grid-template-columns: 1fr 1fr;
@@ -45,6 +68,10 @@
 
   .home p {
     font-size: 1.5em;
+  }
+
+  .about-me {
+    max-width: 46em;
   }
 }
 
