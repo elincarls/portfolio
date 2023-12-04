@@ -33,6 +33,6 @@
     .modal {
         max-width: 75em;
         border-radius: 0.5em;
-        padding-top: 2em; 
+        padding: 2em 0 1em 0; 
       }
 }

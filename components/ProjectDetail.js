@@ -6,8 +6,6 @@ export default function ProjectDetail({ project }) {
   return (
     <>
       <h2 className={`${["page-header"]}`}>{project.title}</h2>
-      <h3 className={`${styles["section-header"]}`} >TL;DR</h3>
-      <p>{project.tldr}</p>
 
       {project.sections.map((section, index) => (
         <div key={index}>
@@ -29,7 +27,7 @@ export default function ProjectDetail({ project }) {
               <div className={`${styles["img-wrapper"]}`}>
                 <img src={section.link} alt={section.alt} />
               </div>
-              <p>{section.caption}</p>
+              <p><i>{section.caption}</i></p>
             </>
 
           ) : section.type === 'bullet-list' ? (
