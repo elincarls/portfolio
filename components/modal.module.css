@@ -12,6 +12,7 @@
 .modal {
   width: 100%;
   background-color: var(--color-background-paper);
+  padding-bottom: 1em;
 }
 
 @media screen and (min-width: 572px) {

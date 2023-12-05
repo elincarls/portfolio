@@ -26,8 +26,9 @@ export default function ProjectDetail({ project }) {
             <>
               <div className={`${styles["img-wrapper"]}`}>
                 <img src={section.link} alt={section.alt} />
+                <p><i>{section.caption}</i></p>
               </div>
-              <p><i>{section.caption}</i></p>
+             
             </>
 
           ) : section.type === 'bullet-list' ? (
