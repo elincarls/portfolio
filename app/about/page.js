@@ -10,7 +10,7 @@ export default function AboutMe() {
       <ContentHeader text="About me" />
       <div className={`${["paragraphs"]}`}>
                 {content.map((paragraph, pIndex) => (
-                  <p key={pIndex}> {paragraph} </p>
+                  <p key={pIndex} className={pIndex === 0 ? `${styles["ingress"]}`: ''}> {paragraph} </p>
                 ))}
               </div>
       <a

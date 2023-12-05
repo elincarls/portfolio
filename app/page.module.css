@@ -21,6 +21,10 @@
   max-width: 46em;
 }
 
+.ingress {
+  font-size: 1em;
+}
+
 .filled-btn {
   margin-top: 3em;
   display: inline-flex;
@@ -35,7 +39,7 @@
   letter-spacing: 0.02875rem;
   padding: 0 1em;
   border: none;
-  border-radius: 0.5em; 
+  border-radius: 0.5em;
   background-color: black;
   color: var(--color-text-contrast);
 }
@@ -44,6 +48,10 @@
   .project-grid {
     grid-template-columns: 1fr 1fr;
     max-width: 100%;
+  }
+
+  .ingress {
+    font-size: 1.25em;
   }
 }
 
