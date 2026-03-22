@@ -1,10 +1,12 @@
-import ContentHeader from "../../components/ContentHeader"
-import ProjectCard from "../../components/ProjectCard"
-import styles from '../page.module.css'
-import { notFound } from 'next/navigation';
+import ContentHeader from "../../../components/ContentHeader";
+import ProjectCard from "../../../components/ProjectCard";
+import styles from "./../page.module.css";
+import { notFound } from "next/navigation";
 
 async function getAllProjects() {
-  const res = await fetch("http://localhost:3000/api/projects", { cache: "no-store" });
+  const res = await fetch("http://localhost:3000/api/projects", {
+    cache: "no-store",
+  });
   if (!res.ok) return notFound();
   return res.json();
 }
@@ -16,18 +18,18 @@ const Projects = async () => {
     <>
       <ContentHeader text="Projects" />
       <div className={`${styles["project-grid"]}`}>
-        {data.map(project => 
+        {data.map((project) => (
           <ProjectCard
             key={project._id}
             slug={project.slug}
             title={project.title}
             description={project?.description}
             tags={project?.tags}
-          />)
-        }
+          />
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Projects;

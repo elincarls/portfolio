@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import ProjectDetailContent from "../../../components/ProjectDetail";
+import BackNav from "../../../../components/BackNav";
+import ProjectDetailContent from "../../../../components/ProjectDetail";
 
 async function getProjectData(slug) {
   const res = await fetch(`http://localhost:3000/api/projects/${slug}`, { cache: "no-store" });

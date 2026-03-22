@@ -18,6 +18,10 @@ body {
   width: 100%;
 }
 
+.detail-content {
+  padding: 0 2em 0 2em;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
@@ -94,11 +98,7 @@ h5 {
   }
 
   .content {
-    padding: 0 2em 0 2em;
-  }
-
-  main {
-    margin-left: 15em;
+    padding: 0 2em 0 17em;
   }
 
   .hero {

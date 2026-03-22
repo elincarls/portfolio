@@ -14,6 +14,11 @@
   gap: 0.25em;
 }
 
+.keywords {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
 .card-header {
   color: var(--text-emphasis);
   font-family: var(--font-sora);

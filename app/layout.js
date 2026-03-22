@@ -9,9 +9,7 @@ export default function RootLayout({ children, modal }) {
     
     <html lang="en" className={`${open_sans.variable} ${sora.variable}`}>
       <body>
-        <SideNav />
-        <TopNav />
-        <main className='content'>
+        <main>
           {children}
         </main>
         {modal}

@@ -1,4 +1,4 @@
-import ContentHeader from "../../components/ContentHeader"
+import ContentHeader from "../../../components/ContentHeader"
 
   export default function MyToolbox() {
     return (

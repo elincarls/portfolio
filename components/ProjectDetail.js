@@ -1,3 +1,4 @@
+import ContentHeader from "./ContentHeader"
 import styles from './projectdetail.module.css'
 import '../app/globals.css'
 
@@ -5,7 +6,7 @@ export default function ProjectDetail({ project }) {
 
   return (
     <>
-      <h2 className={`${["page-header"]}`}>{project.title}</h2>
+      <ContentHeader text={`${project.title}`} />
       <h3 className={`${styles["section-header"]}`} >TL;DR</h3>
       <p>{project.tldr}</p>
 
