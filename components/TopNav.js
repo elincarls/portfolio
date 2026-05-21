@@ -28,7 +28,7 @@ export default function TopNav() {
     <>
       <div className={`${styles["navbar"]}`}>
         <Link href="/">
-          <img src="/title-logo-mobile.svg" alt="" className={styles.logo} />
+          <img src="/mtn-logo.svg" alt="" className={styles.logo} />
         </Link>
         <button
           className={`${styles["menu-button"]}`}

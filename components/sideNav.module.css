@@ -10,11 +10,11 @@
     position: fixed;
 }
 
-.logo {
-    height: 72px;
-    margin-bottom: 2.5em;
-    margin-top: 2em;
-    width: 176px;
+.logo-container {
+    padding: 4.8em 0 2.5em 2.25em;
+    align-items: flex-end;
+    align-self: stretch;
+    display: flex;
 }
 
 .social-link-group {

@@ -7,9 +7,11 @@ export default function SideBar() {
     const pathname = usePathname();
     return (
         <div className={`${styles["sidebar"]}`}>
+            <div className={`${styles["logo-container"]}`}>
             <Link href="/">
-                <img src="/title-logo-desktop.svg" alt="" className={styles.logo} />
+                <img src="/mtn-logo.svg" alt="" />
             </Link>
+            </div>
 
             <Link className={`${styles["menu-item"]} ${pathname == "/projects" ? styles["selected"] : ""}`} href="/projects"> Projects </Link>
             <Link className={`${styles["menu-item"]} ${pathname == "/about" ? styles["selected"] : ""}`} href="/about"> About me </Link>
