@@ -1,7 +1,7 @@
 import SideNav from '../../components/SideNav';
 import TopNav from '../../components/TopNav';
 import './../fonts'
-import { open_sans, sora } from './../fonts';
+import { schibsted_grotesk } from './../fonts';
 import './../globals.css';
 
 export default function RootLayout({ children, modal }) {

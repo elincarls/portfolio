@@ -21,7 +21,6 @@
 
 .card-header {
   color: var(--text-emphasis);
-  font-family: var(--font-sora);
   font-size: 1.25em;
   font-style: normal;
   font-weight: 700;

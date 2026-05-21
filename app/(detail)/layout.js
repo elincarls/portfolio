@@ -1,6 +1,6 @@
 import BackNav from "../../components/BackNav";
 import "../fonts";
-import { open_sans, sora } from "../fonts";
+import { schibsted_grotesk } from "../fonts";
 import "./../globals.css";
 
 export default function DetailLayout({ children, modal }) {

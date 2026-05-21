@@ -10,7 +10,7 @@ html {
 
 body {
   color: var(--color-text-default);
-  font-family: Helvetica Neue, var(--font-open-sans), sans-serif;
+  font-family: var(--font-schibsted-grotesk), sans-serif;
 }
 
 .content {
@@ -56,7 +56,6 @@ li {
 
 .page-header {
   color: var(--text-emphasis);
-  font-family: var(--font-sora);
   font-size: 2em;
   font-style: normal;
   font-weight: 600;
@@ -77,7 +76,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-sora);
+  font-weight: 600;
 }
 
 @media screen and (min-width: 572px) {
