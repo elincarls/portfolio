@@ -113,4 +113,6 @@ h5 {
   --color-background-paper: #ffffff;
   --color-background-backdrop: rgba(0, 0, 0, 0.56);
   --color-border-default: rgba(0, 0, 0, 0.32);
+  --color-primary: #0020F5;
 }
+

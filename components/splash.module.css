@@ -1,0 +1,50 @@
+.splash {
+  background-color: var(--color-primary);
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.text-animation {
+  position: relative;
+  margin: auto;
+  height: 2.5em;
+  overflow: hidden;
+  width: min(90vw, 28rem);
+}
+
+.text-list {
+  display: flex;
+  flex-direction: column;
+  animation: scrollList 6s ease forwards;
+}
+
+.text-list > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-contrast);
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.015625em;
+  line-height: 2.5rem;
+  margin: 0;
+  height: 2.5rem;
+}
+
+@keyframes scrollList {
+  0%, 16.66% {
+    transform: translateY(0);
+  }
+  33.33%, 49.99% {
+    transform: translateY(-2.5rem);
+  }
+  66.66%, 100% {
+    transform: translateY(-5rem);
+  }
+}
