@@ -6,15 +6,18 @@ import styles from './splash.module.css'
 
 export default function Splash() {
   const { splashComplete, setSplashComplete } = useSplash()
+  const isDevelopment = process.env.NODE_ENV === 'development' 
 
   useEffect(() => {
+    if (isDevelopment) return
+
     const timer = setTimeout(() => {
       setSplashComplete(true)
     }, 6000)
     return () => clearTimeout(timer)
-  }, [])
+  }, [isDevelopment, setSplashComplete])
 
-  if (splashComplete) return null
+  if (splashComplete || isDevelopment) return null
 
   return (
     <div className={styles.splash}>
