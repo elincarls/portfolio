@@ -15,7 +15,7 @@ const Work = async () => {
     <>
       <div >
         {data.map((project) => (
-          <p>{project.title}</p>
+          <p key={project._id}>{project.title}</p>
          ))}
       </div>
     </>
