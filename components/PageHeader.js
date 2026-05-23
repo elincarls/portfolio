@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
@@ -29,7 +30,7 @@ export default function PageHeader() {
           <Link href="/blog">Blog,</Link>
           <Link href="/contact">Contact</Link>
         </div>
-        <img src="/logo.svg" alt="" className={styles.logo} />
+        <Image src="/logo.svg" alt="" width={48} height={48} className={styles.logo} />
       </div>
     </>
   );

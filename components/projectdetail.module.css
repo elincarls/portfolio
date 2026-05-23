@@ -7,7 +7,10 @@
 }
 
 .img-wrapper {
-    padding: 1em 0 1em 0;
+    position: relative;
+    padding: 1em 0;
+    width: 100%;
+    min-height: 20rem;
 }
 
   

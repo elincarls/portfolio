@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect} from "react";
 import { usePathname, useRouter } from "next/navigation";
@@ -28,7 +29,7 @@ export default function TopNav() {
     <>
       <div className={`${styles["navbar"]}`}>
         <Link href="/">
-          <img src="/mtn-logo.svg" alt="" className={styles.logo} />
+          <Image src="/mtn-logo.svg" alt="" width={48} height={48} className={styles.logo} />
         </Link>
         <button
           className={`${styles["menu-button"]}`}

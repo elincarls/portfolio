@@ -1,3 +1,4 @@
+import Image from "next/image"
 import ContentHeader from "./ContentHeader"
 import styles from './projectdetail.module.css'
 import '@/app/globals.css'
@@ -28,7 +29,13 @@ export default function ProjectDetail({ project }) {
           ) : section.sectionType === 'image' ? (
             <>
               <div className={`${styles["img-wrapper"]}`}>
-                <img src={section.link} alt={section.alt} />
+                <Image
+                  src={section.link}
+                  alt={section.alt}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes="100vw"
+                />
               </div>
               <p>{section.caption}</p>
             </>

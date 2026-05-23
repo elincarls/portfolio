@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./backnav.module.css";
@@ -13,7 +14,7 @@ export default function BackNav() {
         type="button"
         onClick={() => router.back()}
       >
-        <img src="/arrow-left.svg" alt="" className={styles.socialLogo} /> 
+        <Image src="/arrow-left.svg" alt="" width={24} height={24} className={styles.socialLogo} />
         Back to projects
       </button>
   
@@ -22,7 +23,7 @@ export default function BackNav() {
       type="button"
       onClick={() => router.back()}
     >
-      <img src="/dismiss.svg" alt="" className={styles.socialLogo} /> 
+      <Image src="/dismiss.svg" alt="" width={24} height={24} className={styles.socialLogo} />
       Close
     </button>
     </div>
