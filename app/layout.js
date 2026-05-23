@@ -1,9 +1,9 @@
-import TopNav from "../components/TopNav";
+import { SplashProvider } from "./contexts/SplashContext";
+import Splash from "../components/Splash";
+import PageHeader from "../components/PageHeader";
 import "./fonts";
 import { schibsted_grotesk } from "./fonts";
 import "./globals.css";
-import { SplashProvider } from "./contexts/SplashContext";
-import Splash from "../components/Splash";
 
 export default function RootLayout({ children }) {
   return (
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
       <body>
         <SplashProvider>
           <Splash />
-          <TopNav />
+          <PageHeader />
           <main className="content">{children}</main>
         </SplashProvider>
       </body>

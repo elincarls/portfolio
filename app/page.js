@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSplash } from '../contexts/SplashContext'
+import { useSplash } from './contexts/SplashContext'
 
 export default function Home() {
   const { splashComplete } = useSplash()

@@ -1,3 +1,31 @@
+import { notFound } from "next/navigation";
+
+async function getAllProjects() {
+  const res = await fetch("http://localhost:3000/api/projects", {
+    cache: "no-store",
+  });
+  if (!res.ok) return notFound();
+  return res.json();
+}
+
+const Work = async () => {
+  const data = await getAllProjects();
+
+  return (
+    <>
+      <div >
+        {data.map((project) => (
+          <p>{project.title}</p>
+         ))}
+      </div>
+    </>
+  );
+};
+
+export default Work;
+
+/* 
+
 import ContentHeader from "../../../components/ContentHeader";
 import ProjectCard from "../../../components/ProjectCard";
 import styles from "./../page.module.css";
@@ -33,3 +61,4 @@ const Projects = async () => {
 };
 
 export default Projects;
+ */
