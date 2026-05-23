@@ -1,7 +1,7 @@
-import Modal from "../../../../components/Modal";
-import BackNav from "../../../../components/BackNav";
-import ProjectDetail from "../../../../components/ProjectDetail";
-import "../../../globals.css";
+import Modal from "@/components/Modal";
+import BackNav from "@/components/BackNav";
+import ProjectDetail from "@/components/ProjectDetail";
+import "@/app/globals.css";
 import { notFound } from "next/navigation";
 
 async function getProjectData(slug) {

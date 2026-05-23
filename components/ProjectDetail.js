@@ -1,6 +1,6 @@
 import ContentHeader from "./ContentHeader"
 import styles from './projectdetail.module.css'
-import '../app/globals.css'
+import '@/app/globals.css'
 
 export default function ProjectDetail({ project }) {
 

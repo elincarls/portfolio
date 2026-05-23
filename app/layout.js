@@ -1,9 +1,9 @@
-import { SplashProvider } from "./contexts/SplashContext";
-import Splash from "../components/Splash";
-import PageHeader from "../components/PageHeader";
-import "./fonts";
-import { schibsted_grotesk } from "./fonts";
-import "./globals.css";
+import { SplashProvider } from "@/app/contexts/SplashContext";
+import Splash from "@/components/Splash";
+import PageHeader from "@/components/PageHeader";
+import "@/app/fonts";
+import { schibsted_grotesk } from "@/app/fonts";
+import "@/app/globals.css";
 
 export default function RootLayout({ children }) {
   return (

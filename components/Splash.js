@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useSplash } from '../app/contexts/SplashContext'
+import { useSplash } from '@/app/contexts/SplashContext'
 import styles from './splash.module.css'
 
 export default function Splash() {

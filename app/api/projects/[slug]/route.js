@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { dbConnect } from '../../../../lib/db';
-import Project from '../../../schemas/Project';
+import { dbConnect } from '@/lib/db';
+import Project from '@/app/schemas/Project';
 
 export const GET = async (request, context) => {
     try {

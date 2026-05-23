@@ -26,8 +26,8 @@ export default Work;
 
 /* 
 
-import ContentHeader from "../../../components/ContentHeader";
-import ProjectCard from "../../../components/ProjectCard";
+import ContentHeader from "@/components/ContentHeader";
+import ProjectCard from "@/components/ProjectCard";
 import styles from "./../page.module.css";
 import { notFound } from "next/navigation";
 
