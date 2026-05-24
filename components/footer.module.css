@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em 3em;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.divider {
+  flex: 0 0 100%;
+  background-color: black;
+  height: 2px;
+  margin-bottom: 1em;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.col-right {
+  align-items: flex-end;
+}
