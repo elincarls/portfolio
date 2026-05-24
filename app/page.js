@@ -12,7 +12,7 @@ export default function Home() {
     if (splashComplete) {
       router.replace('/projects')
     }
-  }, [splashComplete])
+  }, [splashComplete, router])
 
   return null
 }
