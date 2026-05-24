@@ -1,14 +1,12 @@
 import ProjectListItem from "@/components/ProjectListItem";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import styles from "./page.module.css";
+import { dbConnect } from "@/lib/db";
+import Project from "@/app/schemas/Project";
 
 async function getAllProjects() {
-  const res = await fetch("http://localhost:3000/api/projects", {
-    cache: "no-store",
-  });
-  if (!res.ok) return notFound();
-  return res.json();
+  await dbConnect();
+  return Project.find({});
 }
 
 const Work = async () => {

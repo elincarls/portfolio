@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     if (splashComplete) {
-      router.replace('/projects')
+      router.replace('/work')
     }
   }, [splashComplete, router])
 

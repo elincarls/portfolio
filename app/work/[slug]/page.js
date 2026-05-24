@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation";
 import ProjectDetailContent from "@/components/ProjectDetail";
+import { dbConnect } from "@/lib/db";
+import Project from "@/app/schemas/Project";
 
 async function getProjectData(slug) {
-  const res = await fetch(`http://localhost:3000/api/projects/${slug}`, { cache: "no-store" });
-  if (!res.ok) return notFound();
-  return res.json();
+  await dbConnect();
+  const project = await Project.findOne({ slug });
+  if (!project) return notFound();
+  return project;
 }
 
 const ProjectDetail = async ({ params }) => {
