@@ -25,6 +25,10 @@
   align-items: flex-end;
 }
 
+.disabled {
+  color: #ADADAD;
+}
+
 .link {
   display: flex;
   align-items: center;

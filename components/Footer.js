@@ -1,16 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./footer.module.css";
+import { navLinks } from "@/lib/nav";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.divider}></div>
       <nav className={styles.col}>
-        <Link href="/work">Work</Link>
-        <Link href="/me">Me</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/contact">Contact</Link>
+        {navLinks.map(link => (
+          link.enabled
+            ? <Link key={link.href} href={link.href}>{link.label}</Link>
+            : <span key={link.href} className={styles.disabled}>{link.label}</span>
+        ))}
       </nav>
 
       <div className={styles.col}>

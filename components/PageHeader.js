@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./pageHeader.module.css";
+import { navLinks } from "@/lib/nav";
 
 export default function PageHeader() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,10 +26,11 @@ export default function PageHeader() {
     <>
       <div className={`${styles["page-header"]}`}>
         <div className={`${styles["header-menu"]}`}>
-          <Link href="/work">Work,</Link>
-          <Link href="/me">Me,</Link>
-          <Link href="/blog">Blog,</Link>
-          <Link href="/contact">Contact</Link>
+          {navLinks.map((link, i) => (
+            link.enabled
+              ? <Link key={link.href} href={link.href}>{link.label}{i < navLinks.length - 1 ? "," : ""}</Link>
+              : <span key={link.href} className={styles.disabled}>{link.label}{i < navLinks.length - 1 ? "," : ""}</span>
+          ))}
         </div>
         <Image src="/logo.svg" alt="" width={48} height={48} className={styles.logo} />
       </div>
