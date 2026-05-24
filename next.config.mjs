@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const path = require('path')
-
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -11,13 +9,7 @@ const nextConfig = {
     ],
   },
   output: 'standalone',
-  webpack(config) {
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      '@': path.resolve(__dirname),
-    }
-    return config
-  },
+  turbopack: {},
 }
 
-module.exports = nextConfig
+export default nextConfig
