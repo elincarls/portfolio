@@ -1,9 +1,21 @@
-.section-header {
-    margin-top: 1em;
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 42em 2fr;
 }
 
-.project-content {
-    padding: 1em; 
+.layout > * {
+    grid-column: 2;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 0.75em;
+}
+
+.section-header {
+    margin-top: 1em;
 }
 
 .img-wrapper {
