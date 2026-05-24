@@ -1,0 +1,13 @@
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    width: 66.67%;
+}

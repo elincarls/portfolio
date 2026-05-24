@@ -1,7 +1,6 @@
 .cat-tag {
     height: 1.625;
-    border: solid 0.0625em black;
-    border-radius: 0.5em;
+    border: solid 0.0875em black;
     padding: 0.5em;
     display: flex;
 }

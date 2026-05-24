@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import BackNav from "@/components/BackNav";
 import ProjectDetailContent from "@/components/ProjectDetail";
 
 async function getProjectData(slug) {

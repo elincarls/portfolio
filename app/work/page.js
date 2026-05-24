@@ -1,4 +1,7 @@
+import ProjectListItem from "@/components/ProjectListItem";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import styles from "./page.module.css";
 
 async function getAllProjects() {
   const res = await fetch("http://localhost:3000/api/projects", {
@@ -13,10 +16,22 @@ const Work = async () => {
 
   return (
     <>
-      <div >
-        {data.map((project) => (
-          <p key={project._id}>{project.title}</p>
-         ))}
+      <div style={{ width: "100%", height: "17em", backgroundColor: "lightgray" }}>
+      </div>
+
+      <div className={`${styles["layout-container"]}`}>
+        <div className={`${styles["project-list"]}`}>
+          {data.map((project) => (
+            <ProjectListItem
+              key={project._id}
+              slug={project.slug}
+              title={project.title}
+              description={project?.description}
+              tags={project?.tags}
+              year={project?.year}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

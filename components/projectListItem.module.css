@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+}
+
+.project-list-item-title {
+  flex: 1;
+  font-weight: 450;
+  font-size: 1.25em;
+}
+
+.project-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+  height: 100%;
+  flex-grow: 1;
+}
+
+
+.tag-section {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25em;
+  width: 14em;
+}
