@@ -24,3 +24,13 @@
 .col-right {
   align-items: flex-end;
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.arrowExternal {
+  transform: rotate(-135deg);
+}
