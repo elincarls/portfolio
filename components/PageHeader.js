@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import styles from "./pageHeader.module.css";
 import { navLinks } from "@/lib/nav";
 
