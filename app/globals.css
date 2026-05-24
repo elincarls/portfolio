@@ -16,7 +16,7 @@ body {
 }
 
 .content {
-  padding: 0 1em 0 1em;
+  padding: 0 var(--page-padding-x);
   width: 100%;
 }
 
@@ -82,6 +82,7 @@ h5 {
 }
 
 :root {
+  --page-padding-x: 3em;
   --color-text-default: rgba(0, 0, 0, 0.87);
   --color-text-muted: rgba(0, 0, 0, 0.72);
   --color-text-emphasis: rgba(0, 0, 0, 1);
