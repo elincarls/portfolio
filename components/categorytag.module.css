@@ -9,7 +9,7 @@
 text-align: justify;
 font-size: 0.875em;
 font-style: normal;
-font-weight: 400;
+font-weight: var(--font-weight-regular);
 line-height: 0.5em;
 letter-spacing: 0.00875;
 }

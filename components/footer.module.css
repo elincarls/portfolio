@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 1em var(--page-padding-x);
   font-size: 1.25em;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .divider {

@@ -4,7 +4,7 @@
 
 .project-list-item-title {
   flex: 1;
-  font-weight: 450;
+  font-weight: var(--font-weight-medium);
   font-size: 1.25em;
 }
 

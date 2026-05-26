@@ -15,7 +15,7 @@
 .header-menu a,
 .header-menu span {
   font-size: 1.25em;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   margin-left: 0.25em;
 }
 
