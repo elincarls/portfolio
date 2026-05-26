@@ -23,22 +23,22 @@ export default function Contact({ contactHeader, contactSubheader }) {
   };
 
   return (
-    <div className={styles.page}>
-      <h1 className={styles.heading}>
+    <div className={styles["page"]}>
+      <h1 className={styles["heading"]}>
         {contactHeader ?? "What can I help you with?"}
       </h1>
-      <p className={styles.subheading}>
+      <p className={styles["subheading"]}>
         {contactSubheader ??
           "Get in touch via the form below and I'll get right back to you"}
       </p>
 
-      <form className={styles.form} onSubmit={onSubmit}>
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="name">
+      <form className={styles["form"]} onSubmit={onSubmit}>
+        <div className={styles["field"]}>
+          <label className={styles["label"]} htmlFor="name">
             Name
           </label>
           <input
-            className={styles.input}
+            className={styles["input"]}
             id="name"
             name="name"
             type="text"
@@ -46,12 +46,12 @@ export default function Contact({ contactHeader, contactSubheader }) {
           />
         </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="email">
+        <div className={styles["field"]}>
+          <label className={styles["label"]} htmlFor="email">
             Email
           </label>
           <input
-            className={styles.input}
+            className={styles["input"]}
             id="email"
             name="email"
             type="email"
@@ -59,12 +59,12 @@ export default function Contact({ contactHeader, contactSubheader }) {
           />
         </div>
 
-        <div className={styles.field}>
-          <label className={styles.label} htmlFor="message">
+        <div className={styles["field"]}>
+          <label className={styles["label"]} htmlFor="message">
             Message
           </label>
           <textarea
-            className={styles.textarea}
+            className={styles["textarea"]}
             id="message"
             name="message"
             rows={6}

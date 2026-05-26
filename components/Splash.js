@@ -20,9 +20,9 @@ export default function Splash() {
   if (splashComplete || isDevelopment) return null
 
   return (
-    <div className={styles.splash}>
-      <div className={styles['text-animation']}>
-        <div className={styles['text-list']}>
+    <div className={styles["splash"]}>
+      <div className={styles["text-animation"]}>
+        <div className={styles["text-list"]}>
           <p>Design Leadership</p>
           <p>User Experience</p>
           <p>Code</p>

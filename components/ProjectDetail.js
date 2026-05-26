@@ -7,16 +7,16 @@ import '@/app/globals.css'
 export default function ProjectDetail({ project }) {
 
   return (
-    <div className={styles.layout}>
+    <div className={styles["layout"]}>
       <ContentHeader text={`${project.title}`} />
       {project.tags && project.tags.length > 0 && (
-        <div className={styles.tags}>
+        <div className={styles["tags"]}>
           {project.tags.map((tag, i) => (
             <CategoryTag key={i} label={tag} />
           ))}
         </div>
       )}
-      <h3 className={`${styles["section-header"]}`} >TL;DR</h3>
+      <h3 className={styles["section-header"]}>TL;DR</h3>
       <p>{project.tldr}</p>
 
       {project.sections.map((section, index) => (
@@ -25,9 +25,9 @@ export default function ProjectDetail({ project }) {
           {section.sectionType === 'paragraph' ? (
             <>
               {section.header !== '' ? (
-                <h3 className={`${styles["section-header"]}`}>{section.header}</h3>
+                <h3 className={styles["section-header"]}>{section.header}</h3>
               ) : null}
-              <div className={`${["paragraphs"]}`}>
+              <div className="paragraphs">
                 {section.body.map((paragraph, pIndex) => (
                   <p key={pIndex}> {paragraph} </p>
                 ))}
@@ -36,7 +36,7 @@ export default function ProjectDetail({ project }) {
 
           ) : section.sectionType === 'image' ? (
             <>
-              <div className={`${styles["img-wrapper"]}`}>
+              <div className={styles["img-wrapper"]}>
                 <Image
                   src={section.link}
                   alt={section.alt}

@@ -10,10 +10,10 @@ export default function ProjecListItem({
   year,
 }) {
   return (
-    <Link href={`/work/${slug}`} className={`${styles["wrapper"]}`}>
-      <div className={`${styles["project-list-item"]}`}>
+    <Link href={`/work/${slug}`} className={styles["wrapper"]}>
+      <div className={styles["project-list-item"]}>
         <div className={styles["project-list-item-title"]}>{title}</div>
-        <div className={`${styles["tag-section"]}`}>
+        <div className={styles["tag-section"]}>
           {tags?.map((tag, index) => (
             <CategoryTag key={index} label={tag} />
           ))}

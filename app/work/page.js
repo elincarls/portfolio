@@ -17,8 +17,8 @@ const Work = async () => {
       <div style={{ width: "100%", height: "17em", backgroundColor: "lightgray" }}>
       </div>
 
-      <div className={`${styles["layout-container"]}`}>
-        <div className={`${styles["project-list"]}`}>
+      <div className={styles["layout-container"]}>
+        <div className={styles["project-list"]}>
           {data.map((project) => (
             <ProjectListItem
               key={project._id}

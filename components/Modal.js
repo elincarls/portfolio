@@ -40,10 +40,10 @@ export default function Modal({ children }) {
   return (
     <div
       ref={backdrop}
-      className={`${styles["modal-backdrop"]}`}
+      className={styles["modal-backdrop"]}
       onClick={onClick}
     >
-      <div ref={wrapper} className={`${styles["modal"]}`}>
+      <div ref={wrapper} className={styles["modal"]}>
         {children}
       </div>
     </div>
