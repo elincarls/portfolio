@@ -43,7 +43,7 @@ export default function Modal({ children }) {
       className={styles["modal-backdrop"]}
       onClick={onClick}
     >
-      <div ref={wrapper} className={styles["modal"]}>
+      <div ref={wrapper} className={styles["modal"]} role="dialog" aria-modal="true">
         {children}
       </div>
     </div>

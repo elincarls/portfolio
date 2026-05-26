@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Button from "../../components/Button";
 import styles from "./contact.module.css";
 
@@ -23,58 +24,66 @@ export default function Contact({ contactHeader, contactSubheader }) {
   };
 
   return (
-    <div className={styles["page"]}>
-      <h1 className={styles["heading"]}>
-        {contactHeader ?? "What can I help you with?"}
-      </h1>
-      <p className={styles["subheading"]}>
-        {contactSubheader ??
-          "Get in touch via the form below and I'll get right back to you"}
-      </p>
+    <div className={styles["layout"]}>
+      <div className={styles["page"]}>
+        <h1 className={styles["heading"]}>
+          {contactHeader ?? "What can I help you with?"}
+        </h1>
+        <p className={styles["subheading"]}>
+          {contactSubheader ??
+            "Get in touch via the form below and I'll get right back to you"}
+        </p>
 
-      <form className={styles["form"]} onSubmit={onSubmit}>
-        <div className={styles["field"]}>
-          <label className={styles["label"]} htmlFor="name">
-            Name
-          </label>
-          <input
-            className={styles["input"]}
-            id="name"
-            name="name"
-            type="text"
-            required
-          />
-        </div>
+        <form className={styles["form"]} onSubmit={onSubmit}>
+          <div className={styles["field"]}>
+            <label className={styles["label"]} htmlFor="name">
+              Name
+            </label>
+            <input
+              className={styles["input"]}
+              id="name"
+              name="name"
+              type="text"
+              required
+            />
+          </div>
 
-        <div className={styles["field"]}>
-          <label className={styles["label"]} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={styles["input"]}
-            id="email"
-            name="email"
-            type="email"
-            required
-          />
-        </div>
+          <div className={styles["field"]}>
+            <label className={styles["label"]} htmlFor="email">
+              Email
+            </label>
+            <input
+              className={styles["input"]}
+              id="email"
+              name="email"
+              type="email"
+              required
+            />
+          </div>
 
-        <div className={styles["field"]}>
-          <label className={styles["label"]} htmlFor="message">
-            Message
-          </label>
-          <textarea
-            className={styles["textarea"]}
-            id="message"
-            name="message"
-            rows={6}
-            required
-          />
-        </div>
+          <div className={styles["field"]}>
+            <label className={styles["label"]} htmlFor="message">
+              Message
+            </label>
+            <textarea
+              className={styles["textarea"]}
+              id="message"
+              name="message"
+              rows={6}
+              required
+            />
+          </div>
 
-        <Button>Send message</Button>
-        {result && <p>{result}</p>}
-      </form>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <Button icon="/send.svg">Send</Button>
+          </div>
+          {result && <p>{result}</p>}
+        </form>
+      </div>
+
+      <div className={styles["image-wrapper"]}>
+        <Image src="/temp_moka.svg" alt="" width={449} height={775} style={{ height: "75%", width: "auto", maxWidth: "100%" }} />
+      </div>
     </div>
   );
 }

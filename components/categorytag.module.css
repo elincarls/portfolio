@@ -1,15 +1,17 @@
 .cat-tag {
-    height: 1.625;
-    border: solid 0.0875em black;
-    padding: 0.5em;
-    display: flex;
+  border: solid 0.1em black;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 0.25em;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .cat-tag p {
-text-align: justify;
-font-size: 0.875em;
-font-style: normal;
-font-weight: var(--font-weight-regular);
-line-height: 0.5em;
-letter-spacing: 0.00875;
+  text-align: justify;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: var(--font-weight-regular);
+  line-height: 0.5em;
+  letter-spacing: 0.00875;
 }

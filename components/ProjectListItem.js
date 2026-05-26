@@ -12,7 +12,7 @@ export default function ProjecListItem({
   return (
     <Link href={`/work/${slug}`} className={styles["wrapper"]}>
       <div className={styles["project-list-item"]}>
-        <div className={styles["project-list-item-title"]}>{title}</div>
+        <h2 className={styles["project-list-item-title"]}>{title}</h2>
         <div className={styles["tag-section"]}>
           {tags?.map((tag, index) => (
             <CategoryTag key={index} label={tag} />

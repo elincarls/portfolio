@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1em var(--page-padding-x);
+  padding: 2em var(--page-padding-x) 1em var(--page-padding-x);
   font-size: 1.25em;
   font-weight: var(--font-weight-semibold);
 }

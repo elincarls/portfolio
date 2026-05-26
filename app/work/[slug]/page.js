@@ -14,11 +14,7 @@ const ProjectDetail = async ({ params }) => {
   const { slug } = await params;
   const projectData = await getProjectData(slug);
 
-  return (
-    <div>
-      <ProjectDetailContent project={projectData} />
-    </div>
-  )
+  return <ProjectDetailContent project={projectData} />
 }
 
 export default ProjectDetail;

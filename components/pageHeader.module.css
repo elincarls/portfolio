@@ -6,6 +6,13 @@
   padding: 2.25em var(--page-padding-x);
 }
 
+@media (max-width: 768px) {
+  .page-header {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+  }
+}
+
 .header-menu {
   display: flex;
   justify-content: center;

@@ -1,0 +1,6 @@
+.divider {
+    border: none;
+    height: 2px;
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 6px 100%;
+}

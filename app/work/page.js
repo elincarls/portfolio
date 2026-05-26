@@ -1,4 +1,6 @@
+import React from "react";
 import ProjectListItem from "@/components/ProjectListItem";
+import Divider from "@/components/Divider";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { dbConnect } from "@/lib/db";
@@ -13,25 +15,30 @@ const Work = async () => {
   const data = await getAllProjects();
 
   return (
-    <>
-      <div style={{ width: "100%", height: "17em", backgroundColor: "lightgray" }}>
-      </div>
+    <div className={styles["layout-container"]}>
+      <Image
+        src="/temp_waves.svg"
+        alt="Work header image"
+        width={1200}
+        height={600}
+        style={{ width: "100%", height: "auto" }}
+      />
 
-      <div className={styles["layout-container"]}>
-        <div className={styles["project-list"]}>
-          {data.map((project) => (
+      <div className={styles["project-list"]}>
+        {data.map((project, i) => (
+          <React.Fragment key={project._id}>
+            {i > 0 && <Divider />}
             <ProjectListItem
-              key={project._id}
               slug={project.slug}
               title={project.title}
               description={project?.description}
               tags={project?.tags}
               year={project?.year}
             />
-          ))}
-        </div>
+          </React.Fragment>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

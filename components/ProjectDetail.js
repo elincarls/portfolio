@@ -1,6 +1,7 @@
 import Image from "next/image"
 import ContentHeader from "./ContentHeader"
 import CategoryTag from "./CategoryTag"
+import Divider from "./Divider"
 import styles from './projectdetail.module.css'
 import '@/app/globals.css'
 
@@ -16,8 +17,10 @@ export default function ProjectDetail({ project }) {
           ))}
         </div>
       )}
-      <h3 className={styles["section-header"]}>TL;DR</h3>
+      <h2 className={styles["section-header"]}>TL;DR</h2>
       <p>{project.tldr}</p>
+
+      <Divider />
 
       {project.sections.map((section, index) => (
         <div key={index}>
@@ -25,7 +28,7 @@ export default function ProjectDetail({ project }) {
           {section.sectionType === 'paragraph' ? (
             <>
               {section.header !== '' ? (
-                <h3 className={styles["section-header"]}>{section.header}</h3>
+                <h2 className={styles["section-header"]}>{section.header}</h2>
               ) : null}
               <div className="paragraphs">
                 {section.body.map((paragraph, pIndex) => (
