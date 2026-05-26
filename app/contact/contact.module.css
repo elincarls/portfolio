@@ -1,0 +1,50 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 34em;
+  flex-grow: 1;
+}
+
+.heading {
+  font-size: 2em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.subheading {
+  font-size: 1em;
+  font-weight: var(--font-weight-regular);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 0.5em;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.label {
+  font-size: 1em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.textarea,
+.input {
+  background-color: #F2F2F2;
+  border: none;
+  padding: 0.75em;
+  font-family: inherit;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.textarea:focus,
+.input:focus {
+  outline: none;
+}
