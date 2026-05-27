@@ -3,6 +3,14 @@
     grid-template-columns: 1fr min(42em, 100%) 2fr;
 }
 
+.title {
+    font-size: 2.5em;
+    font-weight: var(--font-weight-semibold);
+    line-height: 120%;
+    letter-spacing: 0.015625em;
+    padding-bottom: 0.25em;
+}
+
 .layout > * {
     grid-column: 2;
 }

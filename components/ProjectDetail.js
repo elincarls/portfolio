@@ -1,5 +1,4 @@
 import Image from "next/image"
-import ContentHeader from "./ContentHeader"
 import CategoryTag from "./CategoryTag"
 import Divider from "./Divider"
 import styles from './projectdetail.module.css'
@@ -9,7 +8,7 @@ export default function ProjectDetail({ project }) {
 
   return (
     <div className={styles["layout"]}>
-      <ContentHeader text={`${project.title}`} />
+      <h1 className={styles["title"]}>{project.title}</h1>
       {project.tags && project.tags.length > 0 && (
         <div className={styles["tags"]}>
           {project.tags.map((tag, i) => (

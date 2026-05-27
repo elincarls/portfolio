@@ -1,9 +1,0 @@
-.content-header {
-    padding: 2em 0 1em 0;
-}
-
-@media screen and (min-width: 1120px) {
-    .content-header {
-        padding: 4em 0 1.5em 0;
-    }
-  }
