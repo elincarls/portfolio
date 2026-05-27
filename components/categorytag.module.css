@@ -2,7 +2,7 @@
   border: solid 0.1em black;
   display: inline-flex;
   align-items: center;
-  padding: 0.5em 0.25em;
+  padding: 0.25em 0.25em;
   white-space: nowrap;
   line-height: 1;
 }

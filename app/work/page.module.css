@@ -7,9 +7,14 @@
 }
 
 .project-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 1em;
     width: 66.67%;
+}
+
+.divider-row {
+    grid-column: 1 / -1;
 }
 
 @media (max-width: 768px) {

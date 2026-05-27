@@ -8,7 +8,7 @@ import Project from "@/app/schemas/Project";
 
 async function getAllProjects() {
   await dbConnect();
-  return Project.find({});
+  return Project.find({}).lean();
 }
 
 const Work = async () => {
@@ -27,7 +27,7 @@ const Work = async () => {
       <div className={styles["project-list"]}>
         {data.map((project, i) => (
           <React.Fragment key={project._id}>
-            {i > 0 && <Divider />}
+            {i > 0 && <div className={styles["divider-row"]}><Divider /></div>}
             <ProjectListItem
               slug={project.slug}
               title={project.title}
