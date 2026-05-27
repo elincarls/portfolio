@@ -59,6 +59,10 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  year: {
+    type: String, 
+    required: false,
+  },
   sections: [sectionSchema],
 });
 

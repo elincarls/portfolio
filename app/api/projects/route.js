@@ -5,7 +5,7 @@ import Project from '@/app/schemas/Project';
 export const GET = async (request) => {
     try {
         await dbConnect();
-        const projects = await Project.find({});
+        const projects = await Project.find({}).lean();
         console.log('Projects from DB:', projects);
         return new NextResponse(JSON.stringify(projects), {status: 200});
     } catch (error) {
