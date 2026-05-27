@@ -13,9 +13,22 @@
 }
 
 .button:hover {
-    background-color: var(--color-background-action--hover);
+    color: var(--color-text--hover);
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
 }
 
 .button:active {
-    background-color: transparent;
+    color: var(--color-text-default);
 }

@@ -1,7 +1,8 @@
-import Image from "next/image";
 import styles from "./footer.module.css";
 import { navLinks } from "@/lib/nav";
 import NavLink from "./NavLink";
+
+const arrowMask = { WebkitMaskImage: "url(/arrow-16.svg)", maskImage: "url(/arrow-16.svg)" };
 
 export default function Footer() {
   return (
@@ -17,16 +18,16 @@ export default function Footer() {
 
       <div className={styles["col"]}>
         <a href="/cv.pdf" download className={styles["link"]}>
-          CV <Image src="/arrow-16.svg" width={16} height={16} alt="" />
+          CV <span className={styles["arrow"]} style={arrowMask} aria-hidden="true" />
         </a>
       </div>
 
       <div className={`${styles["col"]} ${styles["col-right"]}`}>
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles["link"]}>
-          GitHub <Image src="/arrow-16.svg" width={16} height={16} alt="" className={styles["arrow-external"]} />
+          GitHub <span className={`${styles["arrow"]} ${styles["arrow-external"]}`} style={arrowMask} aria-hidden="true" />
         </a>
         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles["link"]}>
-          LinkedIn <Image src="/arrow-16.svg" width={16} height={16} alt="" className={styles["arrow-external"]} />
+          LinkedIn <span className={`${styles["arrow"]} ${styles["arrow-external"]}`} style={arrowMask} aria-hidden="true" />
         </a>
       </div>
     </footer>
