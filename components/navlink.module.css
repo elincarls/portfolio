@@ -1,0 +1,24 @@
+.nav-link {
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.nav-link:hover {
+  color: var(--color-text--hover);
+}
+
+.active {
+  position: relative;
+  display: inline-block;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 50%;
+  transform: translateY(calc(-50% + 2px));
+  height: 2.4px;
+  background: currentColor;
+}

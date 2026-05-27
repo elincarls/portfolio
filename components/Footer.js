@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
 import styles from "./footer.module.css";
 import { navLinks } from "@/lib/nav";
+import NavLink from "./NavLink";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
       <nav className={styles["col"]}>
         {navLinks.map(link => (
           link.enabled
-            ? <Link key={link.href} href={link.href}>{link.label}</Link>
+            ? <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
             : <span key={link.href} className={styles["disabled"]}>{link.label}</span>
         ))}
       </nav>

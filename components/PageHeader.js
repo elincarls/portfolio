@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import styles from "./pageHeader.module.css";
 import { navLinks } from "@/lib/nav";
+import NavLink from "./NavLink";
 
 export default function PageHeader() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,9 +25,12 @@ export default function PageHeader() {
     <header className={styles["page-header"]}>
       <nav className={styles["header-menu"]}>
         {navLinks.map((link, i) => (
-          link.enabled
-            ? <Link key={link.href} href={link.href}>{link.label}{i < navLinks.length - 1 ? "," : ""}</Link>
-            : <span key={link.href} className={styles["disabled"]}>{link.label}{i < navLinks.length - 1 ? "," : ""}</span>
+          <span key={link.href}>
+            {link.enabled
+              ? <NavLink href={link.href}>{link.label}</NavLink>
+              : <span className={styles["disabled"]}>{link.label}</span>
+            }{i < navLinks.length - 1 ? "," : ""}
+          </span>
         ))}
       </nav>
       <Image src="/logo.svg" alt="" width={48} height={48} className={styles["logo"]} />

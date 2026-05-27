@@ -80,10 +80,10 @@ h5 {
 :root {
   --page-padding-x: 3em;
   --content-padding-top: 2em;
-  --color-text-default: rgba(0, 0, 0, 0.87);
+  --color-text-default: rgba(0, 0, 0, 1);
   --color-text-muted: rgba(0, 0, 0, 0.72);
-  --color-text-emphasis: rgba(0, 0, 0, 1);
   --color-text-contrast: #ffffff;
+  --color-text--hover: #333333;
   --color-background-paper: #ffffff;
   --color-background-action--hover: rgba(0, 0, 0, 0.04);
   --color-background-backdrop: rgba(0, 0, 0, 0.56);
