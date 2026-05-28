@@ -3,7 +3,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25em;
-    font-size: 1.25em;
+    font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     font-family: inherit;
     /* text-transform: uppercase; */
