@@ -20,8 +20,9 @@
   }
 }
 
-.layout p {
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif;
+.layout p,
+.layout li {
+  font-family: var(--font-lora), Georgia, serif;
   line-height: 1.8;
 }
 

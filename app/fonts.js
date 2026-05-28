@@ -1,7 +1,13 @@
-import { Schibsted_Grotesk } from "next/font/google";
+import { Schibsted_Grotesk, Lora } from "next/font/google";
 
 export const schibsted_grotesk = Schibsted_Grotesk({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-schibsted-grotesk",
+});
+
+export const lora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-lora",
 });
