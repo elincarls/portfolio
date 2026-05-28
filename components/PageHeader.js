@@ -25,7 +25,7 @@ export default function PageHeader() {
     <header className={styles["page-header"]}>
       <nav className={styles["header-menu"]}>
         {navLinks.map((link, i) => (
-          <span key={link.href}>
+          <span key={link.href} className={styles["nav-item"]}>
             {link.enabled
               ? <NavLink href={link.href}>{link.label}</NavLink>
               : <span className={styles["disabled"]}>{link.label}</span>

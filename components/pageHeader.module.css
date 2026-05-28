@@ -21,9 +21,13 @@
 
 .header-menu a,
 .header-menu span {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: var(--font-weight-semibold);
   margin-left: 0.25em;
+}
+
+.nav-item {
+  white-space: nowrap;
 }
 
 .disabled {
