@@ -12,9 +12,9 @@
   --color-background-backdrop: rgba(0, 0, 0, 0.56);
   --color-border-default: rgba(0, 0, 0, 0.32);
   --color-primary: #0020F5;
-  --font-weight-regular: 350;
-  --font-weight-medium: 450;
-  --font-weight-semibold: 550;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 }
 
 * {
@@ -88,7 +88,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
 }
 
 @media (max-width: 1200px) {
