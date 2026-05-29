@@ -1,19 +1,27 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
+  display: flex;
   align-items: center;
+  gap: 1em;
   padding: 1em 0;
 }
 
 .project-list-item-title {
   font-weight: var(--font-weight-medium);
   font-size: 1.25em;
+  flex: 1;
   min-width: 0;
+}
+
+.year {
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  vertical-align: super;
+  margin-left: 0.5em;
 }
 
 .tag-section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.25em;
 }

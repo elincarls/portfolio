@@ -10,13 +10,15 @@ export default function ProjecListItem({
 }) {
   return (
     <Link href={`/work/${slug}`} className={styles["wrapper"]}>
-      <h2 className={styles["project-list-item-title"]}>{title}</h2>
+      <h2 className={styles["project-list-item-title"]}>
+        {title}
+        {year && <span className={styles["year"]}>{year}</span>}
+      </h2>
       <div className={styles["tag-section"]}>
         {tags?.map((tag, index) => (
           <CategoryTag key={index} label={tag} />
         ))}
       </div>
-      <p>{year}</p>
     </Link>
   );
 }

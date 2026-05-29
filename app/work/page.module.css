@@ -1,20 +1,17 @@
 .layout-container {
     display: flex;
     flex-direction: column;
-    gap: 2em;
     align-items: flex-end;
+    gap: 4em;
     width: 100%;
 }
 
 .project-list {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    column-gap: 1em;
+    display: flex;
+    flex-direction: column;
     width: 66.67%;
-}
-
-.divider-row {
-    grid-column: 1 / -1;
+    padding-right: 2em;
+    margin-bottom: 4em;
 }
 
 @media (max-width: 768px) {
