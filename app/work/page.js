@@ -8,7 +8,7 @@ import Project from "@/app/schemas/Project";
 
 async function getAllProjects() {
   await dbConnect();
-  return Project.find({}).lean();
+  return Project.find({}).sort({ year: -1 }).lean();
 }
 
 const Work = async () => {
