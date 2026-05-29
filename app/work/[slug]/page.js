@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
-import ProjectDetailContent from "@/components/ProjectDetail";
+import CategoryTag from "@/components/CategoryTag";
+import Divider from "@/components/Divider";
+import ContentSections from "@/components/ContentSections";
 import ProjectNav from "@/components/ProjectNav";
 import { dbConnect } from "@/lib/db";
 import Project from "@/app/schemas/Project";
+import styles from "./page.module.css";
 
 async function getProjectData(slug) {
   await dbConnect();
@@ -19,14 +22,29 @@ async function getAdjacentProjects(projectId) {
   return { prev, next };
 }
 
-const ProjectDetail = async ({ params }) => {
+const ProjectDetailPage = async ({ params }) => {
   const { slug } = await params;
-  const projectData = await getProjectData(slug);
-  const { prev, next } = await getAdjacentProjects(projectData._id);
+  const project = await getProjectData(slug);
+  const { prev, next } = await getAdjacentProjects(project._id);
 
   return (
     <>
-      <ProjectDetailContent project={projectData} />
+      <div className={styles["layout"]}>
+        <h1 className={styles["title"]}>{project.title}</h1>
+        {project.tags && project.tags.length > 0 && (
+          <div className={styles["tags"]}>
+            {project.tags.map((tag, i) => (
+              <CategoryTag key={i} label={tag} />
+            ))}
+          </div>
+        )}
+        <div className={styles["tldr-section"]}>
+          <h2>tl;dr</h2>
+          <p>{project.tldr}</p>
+          <Divider />
+        </div>
+        <ContentSections sections={project.sections} />
+      </div>
       <ProjectNav
         prev={prev ? { slug: prev.slug, title: prev.title } : null}
         next={next ? { slug: next.slug, title: next.title } : null}
@@ -35,4 +53,4 @@ const ProjectDetail = async ({ params }) => {
   );
 }
 
-export default ProjectDetail;
+export default ProjectDetailPage;

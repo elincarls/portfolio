@@ -4,6 +4,7 @@
   row-gap: 1em;
   --section-heading-size: 1.25em;
   --section-heading-color: var(--color-primary);
+  padding-bottom: 4em;
 }
 
 .layout > * {
