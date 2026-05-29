@@ -6,6 +6,7 @@
     font-size: 1.25rem;
     font-weight: var(--font-weight-semibold);
     font-family: inherit;
+    color: inherit;
     /* text-transform: uppercase; */
     padding: 0.25em 0em;
     background-color: transparent;
