@@ -3,9 +3,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 2em var(--page-padding-x) 1em var(--page-padding-x);
+  padding: 1em var(--page-padding-x);
   font-size: 1.25rem;
   font-weight: var(--font-weight-semibold);
+  margin-top: 6em;
 }
 
 .divider {

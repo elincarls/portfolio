@@ -3,14 +3,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-background-paper);
-  padding: 2.25em var(--page-padding-x);
-}
-
-@media (max-width: 768px) {
-  .page-header {
-    padding-top: 1.25em;
-    padding-bottom: 1.25em;
-  }
+  padding: 2.25rem var(--page-padding-x);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
 }
 
 .header-menu {
@@ -21,8 +16,6 @@
 
 .header-menu a,
 .header-menu span {
-  font-size: 1.25rem;
-  font-weight: var(--font-weight-semibold);
   margin-left: 0.25em;
 }
 
@@ -32,4 +25,11 @@
 
 .disabled {
   color: #ADADAD;
+}
+
+@media (max-width: 740px) {
+  .page-header {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+  }
 }

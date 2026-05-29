@@ -39,7 +39,7 @@ export default function ContactForm() {
         <textarea className={styles["textarea"]} id="message" name="message" rows={6} required />
       </div>
 
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div className={styles["form-submit"]}>
         <Button icon="/send.svg">Send</Button>
       </div>
       {result && <p>{result}</p>}

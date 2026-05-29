@@ -11,16 +11,6 @@
   grid-column: 2;
 }
 
-@media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .layout > * {
-    grid-column: 1;
-  }
-}
-
 .layout p,
 .layout li {
   font-family: var(--font-lora), Georgia, serif;
@@ -33,6 +23,7 @@
   line-height: 120%;
   letter-spacing: 0.015625em;
   padding-bottom: 0.25em;
+  margin-top: 2em;
 }
 
 .tldr-section hr {
@@ -50,4 +41,24 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    margin-top: 1.25em;
+  }
+}
+
+@media (max-width: 740px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layout > * {
+    grid-column: 1;
+  }
+
+  .title {
+    margin-top: 0.5em;
+  }
 }
