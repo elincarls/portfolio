@@ -11,7 +11,6 @@
     flex-direction: column;
     width: 66.67%;
     padding-right: 3em;
-    margin-bottom: 4em;
 }
 
 @media (max-width: 740px) {

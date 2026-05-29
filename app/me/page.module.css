@@ -37,6 +37,10 @@
   .heading {
     margin-top: 1.25em;
   }
+
+  .content {
+    padding-inline: 0;
+  }
 }
 
 @media (max-width: 740px) {
@@ -46,6 +50,10 @@
 
   .heading {
     margin-top: 0.5em;
+  }
+
+  .content {
+    padding-inline: 0;
   }
 
   .image-wrapper {
