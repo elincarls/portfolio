@@ -14,10 +14,12 @@ async function getProjectData(slug) {
   return project;
 }
 
-async function getAdjacentProjects(projectId) {
+async function getAdjacentProjects(projectId, year) {
   const [prev, next] = await Promise.all([
-    Project.findOne({ _id: { $lt: projectId } }).sort({ _id: -1 }).select("slug title").lean(),
-    Project.findOne({ _id: { $gt: projectId } }).sort({ _id: 1 }).select("slug title").lean(),
+    Project.findOne({ $or: [{ year: { $gt: year } }, { year, _id: { $gt: projectId } }] })
+      .sort({ year: 1, _id: 1 }).select("slug title").lean(),
+    Project.findOne({ $or: [{ year: { $lt: year } }, { year, _id: { $lt: projectId } }] })
+      .sort({ year: -1, _id: -1 }).select("slug title").lean(),
   ]);
   return { prev, next };
 }
@@ -25,7 +27,7 @@ async function getAdjacentProjects(projectId) {
 const ProjectDetailPage = async ({ params }) => {
   const { slug } = await params;
   const project = await getProjectData(slug);
-  const { prev, next } = await getAdjacentProjects(project._id);
+  const { prev, next } = await getAdjacentProjects(project._id, project.year);
 
   return (
     <>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './projectnav.module.css';
+
+const arrowMask = { WebkitMaskImage: "url(/arrow-16.svg)", maskImage: "url(/arrow-16.svg)" };
 
 export default function ProjectNav({ prev, next }) {
   if (!prev && !next) return null;
@@ -8,15 +9,15 @@ export default function ProjectNav({ prev, next }) {
   return (
     <nav className={styles["nav"]}>
       {prev && (
-        <Link href={`/work/${prev.slug}`} className={styles["item"]}>
-          <Image src="/arrow-left.svg" alt="" width={16} height={16} aria-hidden="true" />
-          <span className={styles["title"]}>{prev.title}</span>
+        <Link href={`/work/${prev.slug}`} className={`${styles["item"]} ${styles["item-prev"]}`}>
+          <span className={`${styles["arrow"]} ${styles["arrow-left"]}`} style={arrowMask} aria-hidden="true" />
+          <span className={styles["title"]}><span className={styles["title-inner"]}>{prev.title}</span></span>
         </Link>
       )}
       {next && (
-        <Link href={`/work/${next.slug}`} className={styles["item"]}>
-          <span className={styles["title"]}>{next.title}</span>
-          <Image src="/arrow-left.svg" alt="" width={16} height={16} className={styles["arrow-right"]} aria-hidden="true" />
+        <Link href={`/work/${next.slug}`} className={`${styles["item"]} ${styles["item-next"]}`}>
+          <span className={styles["title"]}><span className={styles["title-inner"]}>{next.title}</span></span>
+          <span className={`${styles["arrow"]} ${styles["arrow-right"]}`} style={arrowMask} aria-hidden="true" />
         </Link>
       )}
     </nav>
