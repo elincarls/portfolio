@@ -1,7 +1,7 @@
 .nav {
   position: fixed;
   top: 55vh;
-  right: var(--page-padding-x);
+  right: calc(max(0px, (100vw - 1920px) / 2) + var(--page-padding-x));
   width: 33vw;
   max-width: 18em;
   display: flex;
