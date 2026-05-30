@@ -34,6 +34,7 @@ const Work = async () => {
               description={project?.description}
               tags={project?.tags}
               year={project?.year}
+              enabled={project.enabled}
             />
           </React.Fragment>
         ))}

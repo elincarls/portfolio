@@ -27,6 +27,7 @@ const projectSchema = new mongoose.Schema({
   tags: { type: [String], required: false },
   tldr: { type: String, required: false },
   year: { type: String, required: false },
+  enabled: { type: Boolean, default: true },
   sections: [sectionSchema],
 });
 

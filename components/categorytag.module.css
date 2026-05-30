@@ -1,5 +1,6 @@
 .cat-tag {
-  border: solid 0.1em black;
+  border: solid 0.1em currentColor;
+  color: inherit;
   display: inline-flex;
   align-items: center;
   padding: 0.25em 0.25em;
