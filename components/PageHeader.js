@@ -33,7 +33,7 @@ export default function PageHeader() {
           </span>
         ))}
       </nav>
-      <Image src="/logo.svg" alt="" width={48} height={48} className={styles["logo"]} />
+      <Image src="/logo.svg" alt="" width={48} height={48} className={styles["logo"]} loading="eager" />
     </header>
   );
 }
