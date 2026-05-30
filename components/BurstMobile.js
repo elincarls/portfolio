@@ -21,20 +21,20 @@ const DRIFT_Y = -180;
 const TEXT_FONT_SIZE = 32;
 
 const RAY_PATHS = [
-  'M430 430 L150 760',
-  'M430 430 L310 780',
-  'M430 430 L520 800',
-  'M430 430 L680 700',
-  'M430 430 L560 440',
-  'M430 430 L480 80',
-  'M430 430 L620 160',
-  'M430 430 L840 390',
-  'M430 430 L750 310',
-  'M430 430 L180 510',
-  'M430 430 L280 260',
-  'M430 430 L100 80',
-  'M430 430 L200 160',
-  'M430 430 L20  430',
+  'M430 430 L189 790',
+  'M430 430 L312 781',
+  'M430 430 L528 798',
+  'M430 430 L731 642',
+  'M430 430 L545 369',
+  'M430 430 L461 78',
+  'M430 430 L636 172',
+  'M430 430 L840 388',
+  'M430 430 L752 317',
+  'M430 430 L176 496',
+  'M430 430 L279 261',
+  'M430 430 L175 22',
+  'M430 430 L93 318',
+  'M430 430 L20 430',
 ];
 
 function ease(t) {
@@ -104,7 +104,7 @@ export default function BurstMobile() {
 
       const de = ease(Math.max(0, Math.min(1, (t - driftDelay) / DRIFT_DUR)));
       wrapEl.style.transformOrigin = `${burstPx}px ${burstPx}px`;
-      wrapEl.style.transform = `translate(${lerp(0, driftX, de)}px, ${lerp(0, driftY, de)}px) rotate(${lerp(0, 25, de)}deg) scale(${lerp(1, 1.8, de)})`;
+      wrapEl.style.transform = `translate(${lerp(0, driftX, de)}px, ${lerp(0, driftY, de)}px) rotate(${lerp(0, 45, de)}deg) scale(${lerp(1, 1.8, de)})`;
 
       const ft = Math.max(0, Math.min(1, (t - textFadeDelay) / TEXT_FADE_DUR));
       textEl.style.opacity   = String(ft);
