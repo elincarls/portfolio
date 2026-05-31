@@ -31,7 +31,7 @@ const ProjectDetailPage = async ({ params }) => {
 
   return (
     <>
-      <div className={styles["layout"]}>
+      <div className={`${styles["layout"]} ${!project.enabled ? styles["disabled"] : ""}`}>
         <h1 className={styles["title"]}>{project.title}</h1>
         {project.tags && project.tags.length > 0 && (
           <div className={styles["tags"]}>

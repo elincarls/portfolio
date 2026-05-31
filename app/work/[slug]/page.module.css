@@ -26,6 +26,10 @@
   margin-top: 2em;
 }
 
+.disabled {
+  opacity: 0.32;
+}
+
 .tldr-section hr {
   margin-top: 3em;
 }

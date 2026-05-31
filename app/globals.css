@@ -7,6 +7,7 @@
   --color-text-muted: rgba(0, 0, 0, 0.72);
   --color-text-contrast: #ffffff;
   --color-text--hover: #333333;
+  --color-text-disabled: #ADADAD;
   --color-background-paper: #ffffff;
   --color-background-action--hover: rgba(0, 0, 0, 0.04);
   --color-background-backdrop: rgba(0, 0, 0, 0.56);
