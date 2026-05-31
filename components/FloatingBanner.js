@@ -20,7 +20,7 @@ export default function FloatingBanner({ banner }) {
           onClick={() => setVisible(false)}
           aria-label="Dismiss banner"
         >
-          ×
+          <img src="/x.svg" alt="Dismiss" className={styles.dismissIcon} />
         </button>
       </div>
       {description && <p className={styles.description}>{description}</p>}
