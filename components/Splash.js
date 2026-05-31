@@ -41,7 +41,10 @@ export default function Splash() {
   }, [splashComplete])
 
   if (unmounted || isDevelopment) return null
-  if (isMobile === null) return null // wait until we know which variant to render
+  if (isMobile === null) {
+    // Return a minimal blocking overlay while waiting for breakpoint detection
+    return <div className={styles["splash"]} />
+  }
 
   return (
     <div
