@@ -27,15 +27,16 @@ async function getAdjacentProjects(projectId, year) {
 const ProjectDetailPage = async ({ params }) => {
   const { slug } = await params;
   const project = await getProjectData(slug);
+  if (!project) return notFound();
   const { prev, next } = await getAdjacentProjects(project._id, project.year);
 
   return (
     <>
-      <div className={`${styles["layout"]} ${!project.enabled ? styles["disabled"] : ""}`}>
-        <h1 className={styles["title"]}>{project.title}</h1>
-        {project.tags && project.tags.length > 0 && (
+      <div className={`${styles["layout"]} ${!project?.enabled ? styles["disabled"] : ""}`}>
+        <h1 className={styles["title"]}>{project?.title}</h1>
+        {project?.tags?.length > 0 && (
           <div className={styles["tags"]}>
-            {project.tags.map((tag, i) => (
+            {project?.tags?.map((tag, i) => (
               <CategoryTag key={i} label={tag} />
             ))}
           </div>
