@@ -42,7 +42,7 @@ const ProjectDetailPage = async ({ params }) => {
         )}
         <div className={styles["tldr-section"]}>
           <h2>tl;dr</h2>
-          <p>{project.tldr}</p>
+          <p>{project?.tldr}</p>
           <Divider />
         </div>
         <ContentSections sections={project.sections} />
