@@ -10,6 +10,15 @@ const siteSchema = new mongoose.Schema({
     subheader: { type: String },
     form: { type: mongoose.Schema.Types.Mixed },
   },
+  banner: {
+    enabled: { type: Boolean, default: false },
+    title: { type: String, required: false },
+    description: { type: String, required: false },
+    link: {
+      label: { type: String, required: false },
+      href: { type: String, required: false },
+    },
+  },
 }, { collection: "site" });
 
 export default mongoose.models.Site ||
