@@ -35,5 +35,7 @@ projectSchema.path("sections").discriminator("paragraph", paragraphSchema);
 projectSchema.path("sections").discriminator("image", imageSchema);
 projectSchema.path("sections").discriminator("bullet-list", bulletListSchema);
 
+export const PROJECT_SORT = { enabled: -1, year: -1, _id: -1 };
+
 export default mongoose.models.Project ||
   mongoose.model("Project", projectSchema);

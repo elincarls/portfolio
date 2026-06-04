@@ -4,11 +4,11 @@ import Divider from "@/components/Divider";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { dbConnect } from "@/lib/db";
-import Project from "@/app/schemas/Project";
+import Project, { PROJECT_SORT } from "@/app/schemas/Project";
 
 async function getAllProjects() {
   await dbConnect();
-  return Project.find({}).sort({ enabled: -1, year: -1, _id: -1 }).lean();
+  return Project.find({}).sort(PROJECT_SORT).lean();
 }
 
 const Work = async () => {

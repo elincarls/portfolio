@@ -4,7 +4,7 @@ import Divider from "@/components/Divider";
 import ContentSections from "@/components/ContentSections";
 import ProjectNav from "@/components/ProjectNav";
 import { dbConnect } from "@/lib/db";
-import Project from "@/app/schemas/Project";
+import Project, { PROJECT_SORT } from "@/app/schemas/Project";
 import styles from "./page.module.css";
 
 async function getProjectData(slug) {
@@ -14,20 +14,23 @@ async function getProjectData(slug) {
   return project;
 }
 
-async function getAdjacentProjects(projectId, year) {
-  const [prev, next] = await Promise.all([
-    Project.findOne({ $or: [{ year: { $gt: year } }, { year, _id: { $gt: projectId } }] })
-      .sort({ year: 1, _id: 1 }).select("slug title").lean(),
-    Project.findOne({ $or: [{ year: { $lt: year } }, { year, _id: { $lt: projectId } }] })
-      .sort({ year: -1, _id: -1 }).select("slug title").lean(),
-  ]);
-  return { prev, next };
+async function getAdjacentProjects(slug) {
+  const ordered = await Project.find({})
+    .sort(PROJECT_SORT)
+    .select("slug title")
+    .lean();
+  const i = ordered.findIndex((p) => p.slug === slug);
+  if (i === -1) return { prev: null, next: null };
+  return {
+    prev: i > 0 ? ordered[i - 1] : null,
+    next: i < ordered.length - 1 ? ordered[i + 1] : null,
+  };
 }
 
 const ProjectDetailPage = async ({ params }) => {
   const { slug } = await params;
   const project = await getProjectData(slug);
-  const { prev, next } = await getAdjacentProjects(project._id, project.year);
+  const { prev, next } = await getAdjacentProjects(slug);
 
   return (
     <>
