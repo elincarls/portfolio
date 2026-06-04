@@ -36,7 +36,13 @@
 
 .tag-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.25em;
+} 
+
+@media (max-width: 430px) {
+  .tag-section {
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }

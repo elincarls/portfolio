@@ -6,4 +6,5 @@
   padding: 0.25em 0.25em;
   white-space: nowrap;
   line-height: 1;
+  flex: none;
 }
