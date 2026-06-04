@@ -27,7 +27,6 @@ async function getAdjacentProjects(projectId, year) {
 const ProjectDetailPage = async ({ params }) => {
   const { slug } = await params;
   const project = await getProjectData(slug);
-  if (!project) return notFound();
   const { prev, next } = await getAdjacentProjects(project._id, project.year);
 
   return (

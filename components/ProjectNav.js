@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './projectnav.module.css';
-
-const arrowMask = { WebkitMaskImage: "url(/arrow-16.svg)", maskImage: "url(/arrow-16.svg)" };
+import { arrowMask } from '@/lib/arrowMask';
 
 export default function ProjectNav({ prev, next }) {
   const [bottomOffset, setBottomOffset] = useState(0);

@@ -3,6 +3,7 @@
   --content-padding-top: 2em;
   --page-inset-padding-top: 4em;
   --page-inset-padding-x: calc(8.75em - var(--page-padding-x));
+  --site-max-width: 1920px;
   --color-text-default: rgba(0, 0, 0, 1);
   --color-text-muted: rgba(0, 0, 0, 0.72);
   --color-text-contrast: #ffffff;
@@ -34,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 1920px;
+  max-width: var(--site-max-width);
   margin-inline: auto;
 }
 
@@ -42,10 +43,6 @@ body {
   padding: 0 var(--page-padding-x);
   width: 100%;
   flex-grow: 1;
-}
-
-.detail-content {
-  padding: 0 2em 0 2em;
 }
 
 body.no-scroll {
@@ -82,10 +79,6 @@ li + li {
   gap: 1em;
 }
 
-.hero {
-  font-size: 3.75em;
-}
-
 h1,
 h2,
 h3,
@@ -95,9 +88,9 @@ h5 {
 }
 
 @media (max-width: 1200px) {
-    :root {
+  :root {
     --page-padding-x: 2em;
-    --page-inset-padding-x: calc(8.75em - 3em);
+    /* --page-inset-padding-x auto-tracks via its calc(... - var(--page-padding-x)) */
   }
 }
 

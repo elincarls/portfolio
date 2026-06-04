@@ -1,11 +1,7 @@
 import styles from "./footer.module.css";
 import { navLinks } from "@/lib/nav";
+import { arrowMask } from "@/lib/arrowMask";
 import NavLink from "./NavLink";
-
-const arrowMask = {
-  WebkitMaskImage: "url(/arrow-16.svg)",
-  maskImage: "url(/arrow-16.svg)",
-};
 
 export default function Footer() {
   return (

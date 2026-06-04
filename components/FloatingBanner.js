@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 import styles from './floatingBanner.module.css';
 
 export default function FloatingBanner({ banner }) {
@@ -11,19 +12,19 @@ export default function FloatingBanner({ banner }) {
   if (!title && !description) return null;
 
   return (
-    <div className={styles.banner} role="status" aria-live="polite">
-      <div className={styles.header}>
-        {title && <p className={styles.title}>{title}</p>}
+    <div className={styles["banner"]} role="status" aria-live="polite">
+      <div className={styles["header"]}>
+        {title && <p className={styles["title"]}>{title}</p>}
         <button
-          className={styles.dismiss}
+          className={styles["dismiss"]}
           type="button"
           onClick={() => setVisible(false)}
           aria-label="Dismiss banner"
         >
-          <img src="/x.svg" alt="Dismiss" className={styles.dismissIcon} />
+          <Image src="/x.svg" alt="Dismiss" width={16} height={16} className={styles["dismiss-icon"]} />
         </button>
       </div>
-      {description && <p className={styles.description}>{description}</p>}
+      {description && <p className={styles["description"]}>{description}</p>}
     </div>
   );
 }

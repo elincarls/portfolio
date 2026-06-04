@@ -8,7 +8,6 @@ const siteSchema = new mongoose.Schema({
   contact: {
     header: { type: String },
     subheader: { type: String },
-    form: { type: mongoose.Schema.Types.Mixed },
   },
   banner: {
     enabled: { type: Boolean, default: false },

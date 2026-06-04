@@ -24,7 +24,7 @@
 }
 
 .disabled {
-  color: #ADADAD;
+  color: var(--color-text-disabled);
 }
 
 @media (max-width: 740px) {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { ease, lerp } from '@/lib/easing';
 
 const LABELS = ['Design Leadership', 'User Experience', 'Code'];
 
@@ -34,16 +35,6 @@ const RAY_PATHS = [
   'M1077 475.589L781 1.58911',
   'M1077 475.589L629.5 327.089',
 ];
-
-// Smootherstep: zero velocity AND acceleration at both ends (C2 continuous),
-// which removes the snap at the start/stop of each motion.
-function ease(t) {
-  return t * t * t * (t * (t * 6 - 15) + 10);
-}
-
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
 
 export default function Burst() {
   const svgRef = useRef(null);
@@ -239,7 +230,7 @@ export default function Burst() {
         y2={LINE_Y}
         stroke="white"
         strokeWidth="6"
-        strokeLinecap="sharp"
+        strokeLinecap="butt"
       />
 
       <g clipPath="url(#burst-text-clip)">

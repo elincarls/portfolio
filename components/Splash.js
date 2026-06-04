@@ -10,7 +10,6 @@ const FADE_DUR = 600 // ms
 
 export default function Splash() {
   const { splashComplete, setSplashComplete } = useSplash()
-  const isDevelopment = false
   const [unmounted, setUnmounted] = useState(false)
   const [isMobile, setIsMobile] = useState(null)
 
@@ -23,16 +22,15 @@ export default function Splash() {
   }, [])
 
   useEffect(() => {
-    if (splashComplete || isDevelopment) return
+    if (splashComplete) return
     document.body.classList.add('no-scroll')
     return () => document.body.classList.remove('no-scroll')
-  }, [splashComplete, isDevelopment])
+  }, [splashComplete])
 
   useEffect(() => {
-    if (isDevelopment) return
     const timer = setTimeout(() => setSplashComplete(true), 5000)
     return () => clearTimeout(timer)
-  }, [isDevelopment, setSplashComplete])
+  }, [setSplashComplete])
 
   useEffect(() => {
     if (!splashComplete) return
@@ -40,7 +38,7 @@ export default function Splash() {
     return () => clearTimeout(timer)
   }, [splashComplete])
 
-  if (unmounted || isDevelopment) return null
+  if (unmounted) return null
   if (isMobile === null) {
     // Return a minimal blocking overlay while waiting for breakpoint detection
     return <div className={styles["splash"]} />

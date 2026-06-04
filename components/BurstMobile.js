@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { ease, lerp } from '@/lib/easing';
 
 const LABELS = ['Design Leadership', 'User Experience', 'Code'];
 
@@ -36,13 +37,6 @@ const RAY_PATHS = [
   'M430 430 L93 318',
   'M430 430 L20 430',
 ];
-
-function ease(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-}
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
 
 export default function BurstMobile() {
   const sceneRef = useRef(null);

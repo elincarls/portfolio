@@ -28,7 +28,7 @@
 }
 
 .year {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: var(--font-weight-regular);
   vertical-align: super;
   margin-left: 0.5em;
