@@ -17,7 +17,7 @@ export default async function Me() {
       <div className={styles["content"]}>
         <h1 className={styles["heading"]}>{me?.header ?? "Design Lead"}</h1>
         {me?.body?.length > 0 && (
-          <div className="paragraphs">
+          <div className={`paragraphs ${styles["text-column"]}`}>
             {me.body.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -25,7 +25,7 @@ export default async function Me() {
         )}
       </div>
       <div className={styles["image-wrapper"]}>
-        <Image src="/temp_mountain.svg" alt="" width={545} height={726} />
+        <Image src="/mountain-480.svg" alt="" width={545} height={726} />
       </div>
     </div>
   );

@@ -16,13 +16,35 @@ const Work = async () => {
 
   return (
     <div className={styles["layout-container"]}>
-      <Image
-        src="/temp_waves.svg"
-        alt="Work header image"
-        width={1200}
-        height={600}
-        style={{ width: "100%", height: "auto" }}
-      />
+      <div className={styles["waves-desktop"]}>
+        <Image
+          className={styles["waves-desktop-img"]}
+          src="/waves-1920.svg"
+          alt="Blue lines on a white background making an abstract representation of a horizon"
+          width={1920}
+          height={600}
+          style={{ height: "auto" }}
+        />
+      </div>
+      <div className={styles["waves-mobile"]}>
+        <Image
+          className={styles["waves-mobile-img"]}
+          src="/waves-740.svg"
+          alt="Blue lines on a white background making an abstract representation of a horizon"
+          width={740}
+          height={600}
+          style={{ height: "auto" }}
+        />
+      </div>
+      <div className={styles["waves-small"]}>
+        <Image
+          src="/waves-430.svg"
+          alt="Blue lines on a white background making an abstract representation of a horizon"
+          width={430}
+          height={600}
+          style={{ width: "100%", height: "auto" }}
+        />
+      </div>
 
       <div className={styles["project-list"]}>
         {data.map((project, i) => (

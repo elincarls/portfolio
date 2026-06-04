@@ -1,8 +1,8 @@
 .layout {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 2em;
+  gap: 4em;
+  height:100%;
 }
 
 .content {
@@ -10,21 +10,25 @@
   flex-direction: column;
   gap: 1em;
   flex: 1;
-  padding-inline: var(--page-inset-padding-x);
+  padding-inline: 8% 4%;
 }
 
 .heading {
-  font-size: 2em;
+  font-size: 4em;
   font-weight: var(--font-weight-semibold);
-  margin-top: 2em;
+  margin-top: 1.25em;
+}
+
+.text-column {
+ max-width: 32em;
 }
 
 .image-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex: 1;
   max-width: 50%;
-  transform: translateY(5%);
+  height:100%;
 }
 
 .image-wrapper img {
@@ -34,8 +38,13 @@
 }
 
 @media (max-width: 1200px) {
+  .layout {
+    gap: 2em;
+  }
+  
   .heading {
-    margin-top: 1.25em;
+    margin-top: 1em;
+    font-size: 3em;
   }
 
   .content {
