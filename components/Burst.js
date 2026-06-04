@@ -35,8 +35,10 @@ const RAY_PATHS = [
   'M1077 475.589L629.5 327.089',
 ];
 
+// Smootherstep: zero velocity AND acceleration at both ends (C2 continuous),
+// which removes the snap at the start/stop of each motion.
 function ease(t) {
-  return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
 function lerp(a, b, t) {
@@ -146,7 +148,7 @@ export default function Burst() {
 
       if (tRel < 0) {
         const fadeT = Math.max(0, Math.min(1, (t - TEXT_FADE_DELAY) / TEXT_FADE_DUR));
-        txtEl.setAttribute('opacity', String(fadeT));
+        txtEl.setAttribute('opacity', String(ease(fadeT)));
         txtEl.textContent = LABELS[0];
         txtEl.setAttribute('y', String(LINE_Y));
         return;
@@ -164,6 +166,9 @@ export default function Burst() {
       if (inRoll) {
         const rollT = Math.min(1, (phaseT - rollStart) / (ROLL_DUR / PHASE_DUR));
         const offset = ease(rollT) * 100;
+        // Fade out as the old label rolls up, back in as the new rolls down.
+        // Opacity dips to 0 exactly at the swap point, hiding the content change.
+        txtEl.setAttribute('opacity', String(Math.abs(2 * rollT - 1)));
         if (rollT < 0.5) {
           txtEl.textContent = current.label;
           txtEl.setAttribute('y', String(LINE_Y - offset));

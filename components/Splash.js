@@ -30,7 +30,7 @@ export default function Splash() {
 
   useEffect(() => {
     if (isDevelopment) return
-    const timer = setTimeout(() => setSplashComplete(true), 5500)
+    const timer = setTimeout(() => setSplashComplete(true), 5000)
     return () => clearTimeout(timer)
   }, [isDevelopment, setSplashComplete])
 
