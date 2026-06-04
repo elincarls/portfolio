@@ -90,7 +90,6 @@ h5 {
 @media (max-width: 1200px) {
   :root {
     --page-padding-x: 2em;
-    /* --page-inset-padding-x auto-tracks via its calc(... - var(--page-padding-x)) */
   }
 }
 

@@ -85,8 +85,6 @@
   transform: rotate(-90deg) translateX(-2px);
 }
 
-/* Empty half that holds a missing prev/next slot so the present item keeps its
-   side on the mobile bar. Not needed in the desktop column layout. */
 .spacer {
   display: none;
 }

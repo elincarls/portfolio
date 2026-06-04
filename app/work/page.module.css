@@ -4,6 +4,7 @@
     align-items: flex-end;
     gap: 4em;
     width: 100%;
+    padding-top:2em;
 }
 
 .project-list {
@@ -20,13 +21,6 @@
   overflow: hidden;
 }
 
-/* Scale the artwork gently as the viewport shrinks (slope < 1 so it
-   doesn't track width 1:1), then let the wrapper crop the sides. */
-.waves-desktop-img {
-  /* width: clamp(740px, 25vw + 1440px, 1920px);
-  max-width: none; */
-}
-
 .waves-mobile {
   display: none;
 }
@@ -36,6 +30,11 @@
 }
 
 @media (max-width: 740px) {
+   .layout-container {
+    gap: 2em;
+    padding-top: 1em;
+  }
+  
   .project-list {
     width: 100%;
   }
@@ -58,6 +57,7 @@
 }
 
 @media (max-width: 430px) {
+
   .waves-mobile {
     display: none;
   }
