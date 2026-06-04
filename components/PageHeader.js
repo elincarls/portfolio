@@ -33,7 +33,7 @@ export default function PageHeader() {
           </span>
         ))}
       </nav>
-      <Image src="/logo.svg" alt="" width={48} height={48} className={styles["logo"]} loading="eager" />
+      <Image src="/logo.svg" alt="A logo with the letters EC within a circle, paraphrasing the CE marking logo" width={48} height={48} className={styles["logo"]} loading="eager" />
     </header>
   );
 }
