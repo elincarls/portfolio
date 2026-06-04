@@ -193,6 +193,8 @@ export default function BurstMobile() {
                 d={d}
                 stroke="white"
                 strokeWidth="3"
+                strokeDasharray="9999"
+                strokeDashoffset="9999"
               />
             ))}
           </svg>
