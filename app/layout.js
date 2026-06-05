@@ -9,6 +9,8 @@ import "@/app/globals.css";
 import { dbConnect } from "@/lib/db";
 import Site from "@/app/schemas/Site";
 
+export const revalidate = 60;
+
 async function getSiteData() {
   await dbConnect();
   return Site.findOne({}).lean();

@@ -3,6 +3,8 @@ import Site from "@/app/schemas/Site";
 import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
+export const revalidate = 60;
+
 async function getContactContent() {
   await dbConnect();
   const site = await Site.findOne({}).lean();

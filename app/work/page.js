@@ -6,6 +6,8 @@ import styles from "./page.module.css";
 import { dbConnect } from "@/lib/db";
 import Project, { PROJECT_SORT } from "@/app/schemas/Project";
 
+export const revalidate = 60;
+
 async function getAllProjects() {
   await dbConnect();
   return Project.find({}).sort(PROJECT_SORT).lean();

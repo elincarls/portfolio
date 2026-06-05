@@ -3,6 +3,8 @@ import { dbConnect } from "@/lib/db";
 import Site from "@/app/schemas/Site";
 import styles from "./page.module.css";
 
+export const revalidate = 60;
+
 async function getMeContent() {
   await dbConnect();
   const site = await Site.findOne({}).lean();
