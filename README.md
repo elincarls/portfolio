@@ -1,34 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Personal portfolio and case-study site for a designer. Built with Next.js
+(App Router) and React, with content stored in MongoDB.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **MongoDB** via **Mongoose** (Atlas)
+- **CSS Modules** + CSS custom properties for theming
+- **next/font** — Schibsted Grotesk and Lora
+- No TypeScript
+- Hosted on **Vercel**; Documents and images on Vercel Blob
+
+## Getting started
+
+Requires Node 18+.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env.local` with the database connection string:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+MONGO_URI=<your MongoDB connection string>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Scripts
 
-## Learn More
+- `npm run dev` — start the dev server
+- `npm run build` — production build
+- `npm run start` — serve the production build
+- `npm run lint` — ESLint (`next/core-web-vitals`)
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+  page.js              # splash → redirect to /work
+  work/                # project list + [slug] detail
+  me/  contact/        # content pages
+  api/                 # GET JSON endpoints (projects, site, checkdb), available in dev only
+  schemas/             # Mongoose models: Project, Site
+  fonts.js  globals.css
+components/             # UI + the SVG "burst" splash animation
+lib/                    # db connection + shared helpers (easing, sort, masks)
+public/                 # brand SVGs (logo, icons, artwork)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Content model
 
-## Deploy on Vercel
+Content lives in MongoDB and is read in Server Components via Mongoose:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **`Site`** — a single document holding `me`, `contact`, and `banner` content.
+- **`Project`** — one document per project, stored in MongoDB. Each project has editorial metadata (`title`, `slug`, `tags`, `year`), an `enabled` visibility flag, and a `sections[]` array that forms the body. Sections are **typed content blocks** of the type `paragraph`, `image`, or `bullet-list`, ordered and schema-validated via Mongoose. This makes up a lightweight, headless-CMS.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project ordering (enabled first, then newest) is defined once in `PROJECT_SORT`
+(`app/schemas/Project.js`) and shared by the list page and the prev/next nav.
+
+> Note: `/work`, `/me`, and `/contact` are statically prerendered and
+> revalidated every 60s (ISR via `export const revalidate`), so database edits
+> appear within about a minute without a redeploy. Project detail pages
+> (`/work/[slug]`) are server-rendered on demand.
+
+## Integrations
+
+- **Contact form** → web3forms (`api.web3forms.com`)
+- **Assets** (PDFs and images) → Vercel Blob storage
+
+## Deployment
+
+Deployed on Vercel via Git integration (push to `main`).
