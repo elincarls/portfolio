@@ -1,10 +1,17 @@
 import Image from "next/image";
 import styles from './contentsections.module.css';
 
+function isValidImageSrc(link) {
+  if (typeof link !== "string") return false;
+  const src = link.trim();
+  return src.startsWith("http") || src.startsWith("/");
+}
+
 export default function ContentSections({ sections = [] }) {
+  const items = Array.isArray(sections) ? sections : [];
   return (
     <div className={styles["sections"]}>
-      {sections.map((section, index) => (
+      {items.map((section, index) => (
         <div key={index} className={styles["section"]}>
           {section?.sectionType === 'paragraph' ? (
             <>
@@ -12,27 +19,38 @@ export default function ContentSections({ sections = [] }) {
                 <h2 className={styles["section-header"]}>{section.header}</h2>
               ) : null}
               <div className="paragraphs">
-                {section?.body?.map((paragraph, pIndex) => (
+                {(Array.isArray(section?.body) ? section.body : []).map((paragraph, pIndex) => (
                   <p key={pIndex}>{paragraph}</p>
                 ))}
               </div>
             </>
-          ) : section?.sectionType === 'image' && section.link ? (
+          ) : section?.sectionType === 'image' ? (
             <>
               <div className={styles["img-wrapper"]}>
-                <Image
-                  src={section.link}
-                  alt={section.alt ?? ""}
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  sizes="100vw"
-                />
+                {isValidImageSrc(section.link) ? (
+                  <Image
+                    className={styles["img"]}
+                    src={section.link}
+                    alt={section.alt ?? ""}
+                    width={section.width}
+                    height={section.height}
+                    sizes="100vw"
+                  />
+                ) : (
+                  <div
+                    className={styles["img-fallback"]}
+                    role="img"
+                    aria-label={section.alt || "Image unavailable"}
+                  >
+                    <span>{section.alt || "Image unavailable"}</span>
+                  </div>
+                )}
               </div>
-              {section.caption && <p>{section.caption}</p>}
+              {section.caption && <figcaption>{section.caption}</figcaption>}
             </>
           ) : section?.sectionType === 'bullet-list' ? (
             <ul>
-              {section?.body?.map((bullet, bIndex) => (
+              {(Array.isArray(section?.body) ? section.body : []).map((bullet, bIndex) => (
                 <li key={bIndex}>{bullet}</li>
               ))}
             </ul>

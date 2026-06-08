@@ -14,6 +14,8 @@ const imageSchema = new mongoose.Schema({
   link: { type: String, required: true },
   alt: { type: String, required: false },
   caption: { type: String, required: false },
+  width: { type: Number, required: true },
+  height: { type: Number, required: true },
 });
 
 const bulletListSchema = new mongoose.Schema({
