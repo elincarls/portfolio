@@ -1,12 +1,26 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './floatingBanner.module.css';
 
+const DISMISS_KEY = 'bannerDismissed';
+
 export default function FloatingBanner({ banner }) {
   const [visible, setVisible] = useState(true);
-  if (!visible || !banner?.enabled) return null;
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem(DISMISS_KEY)) setVisible(false);
+    setReady(true);
+  }, []);
+
+  const dismiss = () => {
+    sessionStorage.setItem(DISMISS_KEY, '1');
+    setVisible(false);
+  };
+
+  if (!ready || !visible || !banner?.enabled) return null;
 
   const { title, description } = banner;
   if (!title && !description) return null;
@@ -18,7 +32,7 @@ export default function FloatingBanner({ banner }) {
         <button
           className={styles["dismiss"]}
           type="button"
-          onClick={() => setVisible(false)}
+          onClick={dismiss}
           aria-label="Dismiss banner"
         >
           <Image src="/x.svg" alt="Dismiss" width={16} height={16} className={styles["dismiss-icon"]} />
