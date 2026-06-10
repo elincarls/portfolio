@@ -12,6 +12,7 @@ export default function Splash() {
   const { splashComplete, setSplashComplete } = useSplash()
   const [unmounted, setUnmounted] = useState(false)
   const [isMobile, setIsMobile] = useState(null)
+  const isDevelopment = process.env.NODE_ENV === 'development'
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 740px)')
@@ -28,9 +29,10 @@ export default function Splash() {
   }, [splashComplete])
 
   useEffect(() => {
+    if (isDevelopment) return
     const timer = setTimeout(() => setSplashComplete(true), 5000)
     return () => clearTimeout(timer)
-  }, [setSplashComplete])
+  }, [isDevelopment, setSplashComplete])
 
   useEffect(() => {
     if (!splashComplete) return
@@ -38,6 +40,7 @@ export default function Splash() {
     return () => clearTimeout(timer)
   }, [splashComplete])
 
+  if (isDevelopment) return null
   if (unmounted) return null
   if (isMobile === null) {
     // Return a minimal blocking overlay while waiting for breakpoint detection
