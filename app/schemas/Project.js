@@ -20,6 +20,7 @@ const imageSchema = new mongoose.Schema({
 
 const bulletListSchema = new mongoose.Schema({
   body: { type: [String], required: true },
+  variant: { type: String, enum: ["spaced", "compact"], default: "spaced" },
 });
 
 const projectSchema = new mongoose.Schema({

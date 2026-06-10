@@ -18,11 +18,13 @@ export default function ContentSections({ sections = [] }) {
               {section.header ? (
                 <h2 className={styles["section-header"]}>{section.header}</h2>
               ) : null}
-              <div className="paragraphs">
-                {(Array.isArray(section?.body) ? section.body : []).map((paragraph, pIndex) => (
-                  <p key={pIndex}>{paragraph}</p>
-                ))}
-              </div>
+              {Array.isArray(section?.body) && section.body.length > 0 && (
+                <div className="paragraphs">
+                  {section.body.map((paragraph, pIndex) => (
+                    <p key={pIndex}>{paragraph}</p>
+                  ))}
+                </div>
+              )}
             </>
           ) : section?.sectionType === 'image' ? (
             <>
@@ -49,7 +51,7 @@ export default function ContentSections({ sections = [] }) {
               {section.caption && <figcaption>{section.caption}</figcaption>}
             </>
           ) : section?.sectionType === 'bullet-list' ? (
-            <ul>
+            <ul className={styles[`bullet-list--${section.variant ?? "spaced"}`]}>
               {(Array.isArray(section?.body) ? section.body : []).map((bullet, bIndex) => (
                 <li key={bIndex}>{bullet}</li>
               ))}
