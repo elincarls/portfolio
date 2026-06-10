@@ -23,10 +23,10 @@ export default function Splash() {
   }, [])
 
   useEffect(() => {
-    if (splashComplete) return
+    if (isDevelopment || splashComplete) return
     document.body.classList.add('no-scroll')
     return () => document.body.classList.remove('no-scroll')
-  }, [splashComplete])
+  }, [isDevelopment, splashComplete])
 
   useEffect(() => {
     if (isDevelopment) return
